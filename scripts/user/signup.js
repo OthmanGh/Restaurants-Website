@@ -6,6 +6,11 @@ const [signupNameInput, signupEmailInput, signupPasswordInput] = [
   document.getElementById("signup_email"),
   document.getElementById("signup_password"),
 ];
+const [signupNameError, signupEmailError, signupPasswordError] = [
+  document.querySelector("#signup_name + .error_message"),
+  document.querySelector("#signup_email + .error_message"),
+  document.querySelector("#signup_password + .error_message"),
+];
 
 signupForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -19,26 +24,34 @@ signupForm.addEventListener("submit", (event) => {
 function signup(name = "", email = "", password = "") {
   // Reset form state
   signupNameInput.classList.remove("form-input-error");
+  signupNameError.innerHTML = "";
   signupEmailInput.classList.remove("form-input-error");
+  signupEmailError.innerHTML = "";
   signupPasswordInput.classList.remove("form-input-error");
+  signupPasswordError.innerHTML = "";
 
   // Validation
   if (name === "") {
     signupNameInput.classList.add("form-input-error");
-    return alert("Please enter your name");
+    signupNameError.innerHTML = "Please enter your name";
+    return;
   }
   if (!validateEmail(email)) {
     signupEmailInput.classList.add("form-input-error");
-    return alert("Please enter a valid email address");
+    signupEmailError.innerHTML = "Please enter a valid email address";
+    return;
   }
   if (password.length < 8) {
     signupPasswordInput.classList.add("form-input-error");
-    return alert("Your password must be at least 8 characters long.");
+    signupPasswordError.innerHTML =
+      "Your password must be at least 8 characters long.";
+    return;
   }
 
   // Check if user already has an account
   if (checkAlreadyExists(email)) {
-    alert("You already have an account! Try logging in.");
+    signupPasswordError.innerHTML =
+      "You already have an account! Try logging in.";
     return;
   }
 

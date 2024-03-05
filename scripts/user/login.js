@@ -1,6 +1,7 @@
 const users = JSON.parse(localStorage.users ?? "[]");
 
 const loginForm = document.getElementById("login_form");
+const errorMessage = document.getElementById("error_message");
 const [loginEmailInput, loginPasswordInput] = [
   document.getElementById("login_email"),
   document.getElementById("login_password"),
@@ -15,7 +16,7 @@ loginForm.addEventListener("submit", (event) => {
   const loginObject = login(email, password);
 
   if (loginObject?.error) {
-    alert("sorry, not right.");
+    errorMessage.innerHTML = "Please enter the correct credentials.";
     return;
   }
   alert(`Hello, ${loginObject.name}!`);
