@@ -36,6 +36,7 @@ let authState = "signup";
 // Auth state toggler event
 authStateToggler.addEventListener("click", (e) => {
   e.preventDefault();
+  resetFormState();
   if (authState === "signup") {
     authState = "login";
     authStateToggler.textContent = "Create an account";
@@ -51,6 +52,7 @@ authStateToggler.addEventListener("click", (e) => {
 
 // Form event
 authForm.addEventListener("submit", (e) => {
+  resetFormState();
   e.preventDefault();
   auth(authName.value, authEmail.value, authPassword.value);
 });
@@ -62,23 +64,27 @@ const auth = (name = "", email, password) => {
     if (name === "") {
       authName.classList.add("form-input-error");
       authMessage.textContent = "Please enter your name";
+      authMessage.classList.add("auth_error");
       return;
     }
     if (!validateEmail(email)) {
       authEmail.classList.add("form-input-error");
       authMessage.textContent = "Please enter a valid email address";
+      authMessage.classList.add("auth_error");
       return;
     }
     if (password.length < 8) {
       authPassword.classList.add("form-input-error");
       authMessage.textContent =
         "Your password must be at least 8 characters long.";
+      authMessage.classList.add("auth_error");
       return;
     }
 
     // Check if user already has an account
     if (checkAlreadyExists(email)) {
       authMessage.textContent = "You already have an account! Try logging in.";
+      authMessage.classList.add("auth_error");
       return;
     }
 
@@ -103,6 +109,7 @@ const auth = (name = "", email, password) => {
 
   if (!loginObject) {
     authMessage.textContent = "Incorrect credentials.";
+    authMessage.classList.add("auth_error");
     return;
   }
   window.location.replace("../../index.html");
@@ -110,6 +117,13 @@ const auth = (name = "", email, password) => {
 };
 
 // Helper functions
+function resetFormState() {
+  authName.classList.remove("form-input-error");
+  authEmail.classList.remove("form-input-error");
+  authPassword.classList.remove("form-input-error");
+  authMessage.classList.remove("auth_error");
+  authMessage.textContent = "";
+}
 function login(email, password) {
   const usersFilter = users.filter(
     (user) => user.email === email && user.password === password
