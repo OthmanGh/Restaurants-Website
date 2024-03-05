@@ -1,7 +1,7 @@
 // Check if admin is logged in
 const loggedIn = localStorage.userId ?? 0;
 if (loggedIn != -1) {
-  window.location.replace("../user/login.html");
+  window.location.replace("../user/auth.html");
 }
 
 const addUserBtn = document.getElementById("add_user_btn");
@@ -39,6 +39,7 @@ function createUser(name, email, password) {
 }
 
 function addRow(user) {
+  const { id, name, email, password } = user;
   // Row
   const userDiv = document.createElement("div");
   userDiv.id = `user_${user.id}`;
@@ -47,12 +48,12 @@ function addRow(user) {
   // Button
   const deleteBtn = document.createElement("button");
   deleteBtn.innerHTML = "Delete";
-  deleteBtn.addEventListener("click", () => deleteUser(user.id));
+  deleteBtn.addEventListener("click", () => deleteUser(id));
 
-  userDiv.innerHTML += `<div>${user.id}</div>
-  <div>${user.name}</div>
-  <div>${user.email}</div>
-  <div>${user.password}</div>`;
+  userDiv.innerHTML += `<div>${id}</div>
+  <div>${name}</div>
+  <div>${email}</div>
+  <div>${password}</div>`;
   const actionsDiv = document.createElement("div");
   actionsDiv.append(deleteBtn);
   userDiv.append(actionsDiv);
