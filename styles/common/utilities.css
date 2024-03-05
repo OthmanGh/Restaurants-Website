@@ -52,3 +52,7 @@
 .f-light {
   font-weight: 300;
 }
+
+.f-wrap {
+  flex-wrap: wrap;
+}
