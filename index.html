@@ -4,11 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Website</title>
+
+    <!-- styles-->
+    <link rel="stylesheet" href="./styles/common/utilities.css" />
     <link rel="stylesheet" href="./styles/style.css" />
+
+    <!-- scripts-->
+    <script defer src="./scripts/app/navbar.js"></script>
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header class="header">
+      <nav class="navbar flex j-s__around a-center">
+        <div class="logo-container">
+          <p class="logo-text">Foo<span>die.</span></p>
+        </div>
+
+        <div class="ham-menu-container">
+          <img id="ham-menu" src="./assets/icons/Hamburger-menu.svg" />
+        </div>
+
+        <ul class="nav-links flex j-s__between">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="menu-toggle">
+        <div>
+          <img class="" />
+        </div>
+
+        <ul class="nav-toggle-link">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </main>
     <footer></footer>
   </body>
 </html>

@@ -84,6 +84,16 @@ h6 {
   overflow-wrap: break-word;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -91,4 +101,99 @@ html {
 body {
   line-height: 1.5;
   font-size: 1.6rem;
+  position: relative;
+}
+
+/*----------------- Header Section -----------------*/
+
+.header {
+  background-color: black;
+  color: white;
+  font-size: 2.4rem;
+}
+
+.navbar {
+  padding: 18px 0;
+}
+
+.nav-links {
+  gap: 3.2rem;
+}
+
+.ham-menu-container {
+  width: 70px;
+  display: none;
+}
+
+.logo-text {
+  font-size: 3.6rem;
+}
+
+.logo-text span {
+  color: orangered;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  color: rgba(255, 68, 0, 0.775);
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/*---------------Media Queries---------------*/
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  /*--------------- header---------------*/
+
+  .navbar {
+    justify-content: space-between;
+    padding: 13px 20px;
+  }
+
+  .header ul {
+    display: none;
+  }
+
+  .ham-menu-container {
+    display: block;
+    width: 55px;
+    cursor: pointer;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    background-color: rgb(46, 46, 46);
+    inset: 0;
+    display: flex;
+    height: 100vh;
+  }
+
+  .nav-toggle-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-toggle-link {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /*--------------- hero section-s------
+  --------*/
+}
+
+@media (max-width: 480px) {
 }
