@@ -63,3 +63,12 @@ function createUser(name, email, password) {
   };
   localStorage.users = JSON.stringify([...users, userObject]);
 }
+
+// Helper functions
+function validateEmail(email = "") {
+  const validationRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  if (validationRegex.test(email)) {
+    return true;
+  }
+  return false;
+}
