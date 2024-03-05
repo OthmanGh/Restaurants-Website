@@ -1,0 +1,46 @@
+/* Flex Layout */
+.flex {
+  display: flex;
+}
+
+.a-start {
+  align-items: flex-start;
+}
+
+.a-center {
+  align-items: center;
+}
+
+.a-end {
+  align-items: flex-end;
+}
+
+.j-s__between {
+  justify-content: space-between;
+}
+
+.j-s__around {
+  justify-content: space-around;
+}
+
+.j-s__evenly {
+  justify-content: space-evenly;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+/* Font Weights */
+
+.f-bold {
+  font-weight: 700;
+}
+
+.f-semi__bold {
+  font-weight: 500;
+}
+
+.f-light {
+  font-weight: 300;
+}
