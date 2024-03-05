@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Restaurant Website</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles/common/utilities.css" />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <style>
+      #users_table {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .user_row:nth-child(1) {
+        font-weight: bold;
+      }
+      .user_row {
+        display: flex;
+        gap: 20px;
+      }
+      .user_row div, .user_row p {
+        width: 20%;
+      }
+    </style>
+    <!-- Scripts -->
+    <script src="../../scripts/admin/index.js" defer></script>
+  </head>
+  <body>
+    <h2>Users</h2>
+    <div id="users_table">
+      <div class="user_row">
+        <p>ID</p>
+        <p>Name</p>
+        <p>Email</p>
+        <p>Password</p>
+        <p>Actions</p>
+      </div>
+    </div>
+  </body>
+</html>

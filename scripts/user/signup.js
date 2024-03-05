@@ -1,3 +1,11 @@
+// Check if user is already logged in
+const loggedIn = localStorage.userId ?? 0;
+if (loggedIn == -1) {
+  window.location.replace("../admin/index.html");
+} else if (loggedIn !== 0) {
+  window.location.replace("../../index.html");
+}
+
 const users = JSON.parse(localStorage.users ?? "[]");
 
 const signupForm = document.getElementById("signup_form");
@@ -69,15 +77,19 @@ function checkAlreadyExists(email) {
 
 function createUser(name, email, password) {
   const userObject = {
-    id: users.length + 1,
+    id: (users[users.length - 1]?.id ?? 0) + 1,
     name: name,
     email: email,
     password: password,
   };
+  saveUserSession(userObject.id);
   localStorage.users = JSON.stringify([...users, userObject]);
 }
 
 // Helper functions
+function saveUserSession(id) {
+  localStorage.setItem("userId", id);
+}
 function validateEmail(email = "") {
   const validationRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   if (validationRegex.test(email)) {

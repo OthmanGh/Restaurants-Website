@@ -1,4 +1,16 @@
+// Check if user is already logged in
+const loggedIn = localStorage.userId ?? 0;
+if (loggedIn == -1) {
+  window.location.replace("../admin/index.html");
+} else if (loggedIn !== 0) {
+  window.location.replace("../../index.html");
+}
+
 const users = JSON.parse(localStorage.users ?? "[]");
+const adminCredentials = {
+  email: "admin@admin.com",
+  password: "admin123",
+};
 
 const loginForm = document.getElementById("login_form");
 const errorMessage = document.getElementById("error_message");
@@ -13,14 +25,31 @@ loginForm.addEventListener("submit", (event) => {
   const email = loginEmailInput.value;
   const password = loginPasswordInput.value;
 
-  const loginObject = login(email, password);
-
-  if (loginObject?.error) {
-    errorMessage.innerHTML = "Please enter the correct credentials.";
+  // Check for admin login
+  if (
+    email === adminCredentials.email &&
+    password === adminCredentials.password
+  ) {
+    errorMessage.innerHTML = "Welcome, admin! Redirecting you now...";
+    setTimeout(() => window.location.replace("../admin/index.html"), 1500);
+    saveUserSession(-1);
     return;
   }
-  alert(`Hello, ${loginObject.name}!`);
+
+  const loginObject = login(email, password);
+
+  if (!loginObject) {
+    errorMessage.innerHTML = "Incorrect credentials.";
+    return;
+  }
+  window.location.replace("../../index.html");
+  saveUserSession(loginObject.id);
+  return;
 });
+
+function saveUserSession(id) {
+  localStorage.setItem("userId", id);
+}
 
 function login(email, password) {
   const usersFilter = users.filter(
@@ -29,7 +58,5 @@ function login(email, password) {
   if (usersFilter.length > 0) {
     return usersFilter[0];
   }
-  return {
-    error: true,
-  };
+  return false;
 }
