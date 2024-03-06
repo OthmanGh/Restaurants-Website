@@ -146,6 +146,7 @@ function createUser(name, email, password) {
     name: name,
     email: email,
     password: password,
+    favorites: [],
   };
   saveUserSession(userObject.id);
   localStorage.users = JSON.stringify([...users, userObject]);

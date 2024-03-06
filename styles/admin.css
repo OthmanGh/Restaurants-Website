@@ -1,6 +1,9 @@
 body {
   font-family: "Inter";
 }
+.margin-bottom {
+  margin-bottom: 20px;
+}
 .container {
   max-width: 1200px;
   margin: auto;
@@ -8,6 +11,11 @@ body {
 }
 .hidden {
   display: none !important;
+}
+.users-section {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #c2c2c2;
 }
 .form-input {
   width: 100%;
@@ -34,9 +42,6 @@ body {
 .button:hover {
   background-color: var(--clrs-secondary-);
 }
-.users_title {
-  margin-bottom: 20px;
-}
 #signup_form {
   margin-bottom: 20px;
   display: flex;
@@ -47,32 +52,18 @@ body {
   flex-shrink: 0;
 }
 #users_table {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.user_row:nth-child(1) {
-  font-weight: bold;
-}
-.user_row {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-.user_row div:nth-child(1),
-.user_row p:nth-child(1) {
-  width: fit-content;
-}
-.user_row div,
-.user_row p {
   width: 100%;
+  text-align: left;
 }
 @media (max-width: 768px) {
+  .container {
+    padding: 20px 40px;
+  }
   #signup_form {
     flex-direction: column;
     align-items: start;
   }
-  #users_table {
+  .table_container {
     overflow-x: scroll;
   }
 }

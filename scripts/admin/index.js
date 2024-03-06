@@ -12,6 +12,7 @@ const [signupNameInput, signupEmailInput, signupPasswordInput] = [
   document.getElementById("signup_password"),
 ];
 const usersTable = document.getElementById("users_table");
+const usersTableBody = document.querySelector("#users_table > tbody");
 
 // Events
 addUserBtn.addEventListener("click", () =>
@@ -33,17 +34,18 @@ function createUser(name, email, password) {
     name: name,
     email: email,
     password: password,
+    favorites: [],
   };
   localStorage.users = JSON.stringify([...users, userObject]);
   addRow(userObject);
 }
 
 function addRow(user) {
-  const { id, name, email, password } = user;
+  const { id, name, email, password, favorites } = user;
   // Row
-  const userDiv = document.createElement("div");
-  userDiv.id = `user_${user.id}`;
-  userDiv.classList.add("user_row");
+  const userRow = document.createElement("tr");
+  userRow.id = `user_${user.id}`;
+  userRow.classList.add("user_row");
 
   // Button
   const deleteBtn = document.createElement("button");
@@ -51,14 +53,15 @@ function addRow(user) {
   deleteBtn.innerHTML = "Delete";
   deleteBtn.addEventListener("click", () => deleteUser(id));
 
-  userDiv.innerHTML += `<div>${id}</div>
-  <div>${name}</div>
-  <div>${email}</div>
-  <div>${password}</div>`;
-  const actionsDiv = document.createElement("div");
-  actionsDiv.append(deleteBtn);
-  userDiv.append(actionsDiv);
-  usersTable.append(userDiv);
+  userRow.innerHTML += `<td>${id}</td>
+  <td>${name}</td>
+  <td>${email}</td>
+  <td>${password}</td>
+  <td>${favorites.length}</td>`;
+  const actionsCol = document.createElement("td");
+  actionsCol.append(deleteBtn);
+  userRow.append(actionsCol);
+  usersTableBody.append(userRow);
 }
 
 function populateUsersTable() {
@@ -77,3 +80,6 @@ function deleteUser(id) {
   const usersFilter = users.filter((user) => user.id != id);
   localStorage.users = JSON.stringify([...usersFilter]);
 }
+
+// Restaurants section
+const restoForm = document.getElementById("resto_form");

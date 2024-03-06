@@ -38,11 +38,55 @@
     </header>
 
     <main class="container">
-      <div class="users_title flex j-s__between">
-        <h2>Users</h2>
-        <button id="add_user_btn" class="button">+ Add User</button>
+      <section class="users-section">
+        <div class="margin-bottom flex j-s__between">
+          <h2>Users</h2>
+          <button id="add_user_btn" class="button">+ Add User</button>
+        </div>
+        <form action="" method="POST" id="signup_form" class="hidden">
+          <input
+            type="text"
+            id="signup_name"
+            class="form-input"
+            placeholder="Name"
+          />
+          <input
+            type="email"
+            id="signup_email"
+            class="form-input"
+            placeholder="Email Address"
+          />
+          <input
+            type="text"
+            id="signup_password"
+            class="form-input"
+            placeholder="Password"
+          />
+          <button type="submit" class="button">Create account</button>
+        </form>
+        <div class="table_container">
+          <table id="users_table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Favorites</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="margin-bottom flex j-s__between">
+        <h2>Restaurants</h2>
+        <button id="add_resto_btn" class="button">+ Add Restaurant</button>
       </div>
-      <form action="" method="POST" id="signup_form" class="hidden">
+      <form action="" method="POST" id="resto_form" class="">
+        <h3>Restaurant Details</h3>
         <input
           type="text"
           id="signup_name"
@@ -61,6 +105,7 @@
           class="form-input"
           placeholder="Password"
         />
+        <h3>Menu</h3>
         <button type="submit" class="button">Create account</button>
       </form>
       <div id="users_table">
