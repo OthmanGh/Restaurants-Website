@@ -1,5 +1,5 @@
-body {
-  font-family: "Inter";
+:root {
+  --error-clr: #dc2626;
 }
 #auth_form {
   margin-top: 20px;
@@ -23,17 +23,16 @@ body {
   transition: border-color 0.2s ease;
 }
 .form-input-error {
-  border-color: #dc2626;
+  border-color: var(--error-clr);
 }
 .form-input:hover,
 .form-input:focus {
-  border-color: #c32422;
+  border-color: var(--clrs-primary-);
 }
 .form-input-icon {
   position: relative;
 }
 .form-input-icon img {
-  fill: red;
   width: 40px;
   height: 40px;
   position: absolute;
@@ -43,7 +42,7 @@ body {
 }
 .auth_error {
   margin-top: 20px;
-  color: #dc2626;
+  color: var(--error-clr);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -58,7 +57,7 @@ body {
 }
 .form-button {
   cursor: pointer;
-  background-color: #c32422;
+  background-color: var(--clrs-primary-);
   border: none;
   color: #fff;
   padding: 15px 30px;
@@ -66,7 +65,7 @@ body {
   transition: background-color 0.2s ease;
 }
 .form-button:hover {
-  background-color: #dd4a48;
+  background-color: var(--clrs-secondary-);
 }
 .hidden {
   display: none;

@@ -12,6 +12,30 @@
     <script src="../../scripts/user/auth.js" defer></script>
   </head>
   <body>
+    <header class="header">
+      <nav class="navbar flex j-s__around a-center">
+        <div class="logo-container">
+          <p class="logo-text">Foo<span>die.</span></p>
+        </div>
+
+        <div class="ham-menu-container">
+          <img id="ham-menu" src="./assets/icons/Hamburger-menu.svg" />
+        </div>
+
+        <ul class="nav-links flex j-s__between">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#restaurants">Restaurants</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <form action="" method="POST" id="auth_form">
       <h2>Join Us</h2>
       <div class="fieldset" id="auth_name_fieldset">
