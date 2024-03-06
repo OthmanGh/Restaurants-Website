@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="./styles/style.css" />
 
     <!-- scripts-->
-    <script defer src="./scripts/app/navbar.js"></script>
+    <!-- <script defer src="./scripts/app/navbar.js"></script>
+    <script defer src="./scripts/app/renderResturants.js"></script> -->
+
+    <script defer src="./scripts/app/landingPage.js"></script>
   </head>
   <body>
     <section class="hero-section">
@@ -40,6 +43,7 @@
           <p class="tagline">WILL YOU SMILE TODAY?</p>
           <p><span class="small-size red tagline">Let us take care of it!</span></p>
         </div>
+<<<<<<< HEAD
       <div>
           <button class="search-pos button button-text red-bg bg-color">Search</button>
         </div>
@@ -53,6 +57,36 @@
     </section>
    
 
+=======
+
+        <ul class="nav-links flex j-s__between">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="landing-section">
+        <form id="form" class="form">
+          <select class="resturants-select f-bold">
+            <option>All</option>
+            <option>Recent</option>
+            <option>Popular</option>
+          </select>
+
+          <label for="" class="flex a-center search-container">
+            <input class="search-input f-bold" type="text" placeholder="Search" />
+            <img class="search-icon" src="./assets/icons/search-svgrepo-com.svg" />
+          </label>
+        </form>
+        <hr />
+        <div id="restaurants-container" class="restaurants-container"></div>
+      </section>
+    </main>
+>>>>>>> ec7d24c2c468d88f82f672b785896ac997eeb15f
     <footer></footer>
   </body>
 </html>

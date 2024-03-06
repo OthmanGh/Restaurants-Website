@@ -58,6 +58,7 @@
 .f-light {
   font-weight: 300;
 }
+<<<<<<< HEAD
 .width{
 
   width:100%;
@@ -113,3 +114,9 @@
 .transparent{
   background-color: transparent;
 }
+=======
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+>>>>>>> ec7d24c2c468d88f82f672b785896ac997eeb15f
