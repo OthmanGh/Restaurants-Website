@@ -42,6 +42,10 @@ body {
 .button:hover {
   background-color: var(--clrs-secondary-);
 }
+.delete-button {
+  background-color: #fff;
+  color: var(--clrs-primary-);
+}
 #signup_form {
   margin-bottom: 20px;
   display: flex;
@@ -55,12 +59,19 @@ body {
   width: 100%;
   text-align: left;
 }
-
+.table,
+.table th,
+.table td {
+  border: 1px solid #c2c2c2;
+  border-collapse: collapse;
+  padding: 10px 20px;
+}
 .resto_form_container {
   display: flex;
   gap: 20px;
 }
-.resto_details, .resto_menu {
+.resto_details,
+.resto_menu {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -81,5 +92,9 @@ body {
   }
   .table_container {
     overflow-x: scroll;
+  }
+  .resto_form_container {
+    flex-direction: column;
+    align-items: start;
   }
 }

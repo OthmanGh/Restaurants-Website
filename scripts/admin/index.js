@@ -49,7 +49,7 @@ function addUserRow(user) {
 
   // Button
   const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("button");
+  deleteBtn.classList.add("button", "delete-button");
   deleteBtn.innerHTML = "Delete";
   deleteBtn.addEventListener("click", () => deleteUser(id));
 
@@ -140,7 +140,7 @@ function addRestoRow(resto) {
 
   // Button
   const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("button");
+  deleteBtn.classList.add("button", "delete-button");
   deleteBtn.innerHTML = "Delete";
   deleteBtn.addEventListener("click", () => deleteResto(id));
 
