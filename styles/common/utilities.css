@@ -18,6 +18,9 @@
 .a-center {
   align-items: center;
 }
+.a-between{
+  align-items: space-between;
+}
 
 .a-end {
   align-items: flex-end;
@@ -34,8 +37,11 @@
 .j-s__evenly {
   justify-content: space-evenly;
 }
+.j-s__end {
+  justify-content: end;
+}
 
-.j-center {
+.j-s__center {
   justify-content: center;
 }
 
@@ -51,4 +57,59 @@
 
 .f-light {
   font-weight: 300;
+}
+.width{
+
+  width:100%;
+}
+
+.red{
+  color: #C32422;
+}
+.pink{
+  color:#e19291;
+}
+.bg-color{
+  color:#ECE2D2;
+}
+.red-bg{
+  background-color: #C32422;
+}
+.pink-bg{
+  background-color: pink;
+}
+.hover1{
+  color:#db7c7a;
+}
+.hover2{
+  color: #e19291;
+}
+.button{
+  
+  border-radius: 25%;
+  border:none;
+  width: 90px;
+  height:40px;
+  
+  font-family: Helvetica, sans-serif;
+
+}
+
+.button-text{
+  font-size: 1.4rem;
+}
+
+.abs{
+  position: absolute;
+
+}
+.gap{
+  gap:20px;
+}
+
+.width{
+  width:100;
+}
+.transparent{
+  background-color: transparent;
 }

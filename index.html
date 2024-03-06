@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant Website</title>
+    <title>Restaurants Website</title>
 
     <!-- styles-->
     <link rel="stylesheet" href="./styles/common/utilities.css" />
@@ -13,39 +13,48 @@
     <script defer src="./scripts/app/navbar.js"></script>
   </head>
   <body>
-    <header class="header">
-      <nav class="navbar flex j-s__around a-center">
-        <div class="logo-container">
-          <p class="logo-text">Foo<span>die.</span></p>
+    <section class="hero-section">
+      <header>
+        <div class="header flex row a-center j-s__between">
+          <img class="logo" src="./assets/images/SweeTreats (1).png">
+          <ul  class ="navbar flex row j-s__center a-center">
+            <li><h5 class="button-text ">Portfolio</h5></li>
+            <li><h5 class="button-text">Services</h5></li>
+            <li><h5 class="button-text">About Us</h5></li>
+            <li><h5 class="button-text">Login</h5></li>
+            <li><button class="button-text red-bg button flex row a-center j-s__center"><h5 class=" bg-color flex row a-center j-s__center"> Sign Up</h5> </button></li>
+          </ul>
+          
         </div>
-
-        <div class="ham-menu-container">
-          <img id="ham-menu" src="./assets/icons/Hamburger-menu.svg" />
+      </header>
+        
+  
+      <div class="slider">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div></div>
+    
+      <div class="hero-text flex column center">
+          <p class="tagline">HOW <span class="red">SWEET</span></p>
+          <p class="tagline">WILL YOU SMILE TODAY?</p>
+          <p><span class="small-size red tagline">Let us take care of it!</span></p>
         </div>
-
-        <ul class="nav-links flex j-s__between">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <div class="menu-toggle">
-        <div>
-          <img class="" />
+      <div>
+          <button class="search-pos button button-text red-bg bg-color">Search</button>
         </div>
-
-        <ul class="nav-toggle-link">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
       </div>
-    </main>
+      <div>
+        
+      </div>
+        
+
+      
+    </section>
+   
+
     <footer></footer>
   </body>
 </html>
+
+

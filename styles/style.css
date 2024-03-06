@@ -1,199 +1,123 @@
-/*
-* TYPOGRAPHY SYSTEM
-
-* Font sizes (rem)
-1 / 1.2 / 1.4 / 1.6 / 1.8 / 2 / 2.4 / 3 / 3.6 / 4.4 / 5.2 / 6.2 / 7.4 / 8.6 / 9.8
-
-* Font weights
-Default: 
-Medium: 
-Semi-bold: 
-Bold:
-
-* Line heights
-Default: 
-Small:
-Medium: 1.2
-Paragraph default:
-Large:
-Letter spacing: 
-
-* COLORS
-- Primary: 
-- Tints:
-- Shades: 
-- Accents:
-- Greys:
-
-* SHADOWS
-
-
-* BORDER-RADIUS
-
-Default:
-Medium:
-
-* WHITESPACE
-- Spacing system (px)
-0.2 / 0.4 / 0.8 / 1.2 / 1.6 / 2.4 / 3.2 / 4.8 / 6.4 / 8 / 9.6 / 12.8
-
-
-
-* Media Queries BreakPoints : 
-  - 320px — 480px: Mobile devices
-  - 481px — 768px: iPads, Tablets
-  - 769px — 1024px: Small screens, laptops
-  - 1025px — 1200px: Desktops, large screens
-  - 1201px and more —  Extra large screens, TV
-
-*/
-
-/*
- CSS Resets : 
-*/
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-ul,
-li {
+*{
+  margin:0;
+  border:0;
+  padding:0;
+  box-sizing:border-box;
   list-style: none;
 }
-
-a {
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+.slider {
+  opacity:1;
+  
+  z-index: -2;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
 }
 
-html {
-  font-size: 62.5%;
+.slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: slider 20s infinite; 
+  position: absolute;
+  background-size: cover;
 }
 
-body {
-  line-height: 1.5;
-  font-size: 1.6rem;
+.slider .slide:nth-child(1) {
+  background-image: url("../assets/images/Untitled\ design\ \(3\).png");
+  animation-delay: -5s; }
+
+.slider .slide:nth-child(2) {
+  background-image: url("../assets/images/Untitled\ design\ \(4\).png");
+  animation-delay: -10s; 
+}
+
+.slider .slide:nth-child(3) {
+  background-image: url("../assets/images/Untitled\ design\ \(5\).png");
+  animation-delay: -15s;
+}
+
+.slider .slide:nth-child(4) {
+  background-image: url("../assets/images/Untitled\ design\ \(6\).png");
+  animation-delay: -20s; 
+}
+
+@keyframes slider {
+ 
+  0%, 25% {
+      opacity: 0; 
+  }
+  26%, 50% {
+      opacity: 1;
+  }
+  51%, 100% {
+      opacity: 0; 
+  }
+}
+
+.navbar{
+  background-color: transparent;
+  gap: 15px;
+  list-style: none;
+  color:#C32422;
+  font-family:Arial, sans-serif;
   position: relative;
+  
 }
 
-/*----------------- Header Section -----------------*/
 
-.header {
-  background-color: black;
-  color: white;
-  font-size: 2.4rem;
+.hero-secion{
+  position: relative;
+  width: 100%;
 }
 
-.navbar {
-  padding: 18px 0;
+.header{
+  position: absolute;
+  z-index: +4;
+  width:100%;
+  padding-right : 30px;
+  padding-left:30px;
+  padding-top: 30px;
 }
 
-.nav-links {
-  gap: 3.2rem;
+.logo{
+  width: 10%;
 }
 
-.ham-menu-container {
-  width: 70px;
-  display: none;
+
+.hero-text > p{
+  font-family: "TheMixBlack-Caps", Sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  font-weight: 800;
+  opacity: 2;
+  color:#e19291;
+  z-index: +3;
 }
 
-.logo-text {
-  font-size: 3.6rem;
+.hero-text{
+  white-space: nowrap;
+  position: absolute;
+  text-align: center;
+  top: 50%; 
+  left: 70%; 
+  transform: translate(-50%, -70%);
+}
+.small-size{
+  font-size: 40px;
+  font-weight: 500;
+}
+.tagline{
+  padding:none;
 }
 
-.logo-text span {
-  color: orangered;
-}
-
-.nav-link:link,
-.nav-link:visited {
-  color: rgba(255, 68, 0, 0.775);
-}
-
-.nav-link:hover,
-.nav-link:active {
-  color: #fff;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-/*---------------Media Queries---------------*/
-
-@media (max-width: 1200px) {
-}
-
-@media (max-width: 1024px) {
-}
-
-@media (max-width: 768px) {
-  /*--------------- header---------------*/
-
-  .navbar {
-    justify-content: space-between;
-    padding: 13px 20px;
-  }
-
-  .header ul {
-    display: none;
-  }
-
-  .ham-menu-container {
-    display: block;
-    width: 55px;
-    cursor: pointer;
-  }
-
-  .menu-toggle {
-    position: absolute;
-    background-color: rgb(46, 46, 46);
-    inset: 0;
-    display: flex;
-    height: 100vh;
-  }
-
-  .nav-toggle-link {
-    display: flex;
-    justify-content: center;
-  }
-
-  .nav-toggle-link {
-    display: block;
-    margin: 0 auto;
-  }
-
-  /*--------------- hero section-s------
-  --------*/
-}
-
-@media (max-width: 480px) {
+.search-pos{
+  top:59%;
+  left:67%;
+  position: absolute;
 }
