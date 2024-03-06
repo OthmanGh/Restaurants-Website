@@ -12,7 +12,7 @@
     <!-- scripts-->
     <!-- <script defer src="./scripts/app/navbar.js"></script>
     <script defer src="./scripts/app/renderResturants.js"></script> -->
-
+    <script src="./scripts/app/main.js" defer></script>
     <script defer src="./scripts/app/landingPage.js"></script>
   </head>
   <body>
@@ -28,14 +28,21 @@
 
         <ul class="nav-links flex j-s__between">
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#restaurants">Restaurants</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
         </ul>
 
         <div class="nav-link-btns flex">
-          <a class="login-btn" href="#">Login</a>
-          <a class="signup-btn" href="#">Sign Up</a>
+          <a class="login-btn" href="./pages/user/auth.html">Login</a>
+          <a class="signup-btn" href="./pages/user/auth.html">Sign Up</a>
+          <a class="logout-btn hidden" href="#">Log out</a>
         </div>
       </nav>
     </header>
@@ -49,8 +56,9 @@
               will you smile today?
             </h1>
             <p class="hero-description">
-              Discover sweet delights at our handpicked restaurants. Order online and satisfy your cravings with ease. Treat yourself to irresistible desserts
-              delivered right to your door.
+              Discover sweet delights at our handpicked restaurants. Order
+              online and satisfy your cravings with ease. Treat yourself to
+              irresistible desserts delivered right to your door.
             </p>
 
             <div class="hero-btns">
@@ -77,8 +85,16 @@
                 <option value="lowest-rated">Lowest Rated</option>
               </select>
               <div class="flex a-center j-s__center">
-                <input id="search-input" class="search-input f-bold" type="text" placeholder="Search" />
-                <img class="search-icon" src="./assets/icons/search-svgrepo-com.svg" />
+                <input
+                  id="search-input"
+                  class="search-input f-bold"
+                  type="text"
+                  placeholder="Search"
+                />
+                <img
+                  class="search-icon"
+                  src="./assets/icons/search-svgrepo-com.svg"
+                />
               </div>
             </div>
           </form>

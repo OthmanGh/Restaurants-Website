@@ -7,7 +7,7 @@ const [navLoginBtn, navSignupBtn, navLogoutBtn] = [
 // Check if user is logged in
 window.isLoggedIn = localStorage.userId ?? 0;
 if (window.isLoggedIn !== 0) {
-  [navLoginBtn, navSignupBtn].forEach((el) => el.classList.add("hidden"));
+  [navLoginBtn, navSignupBtn].forEach((el) => el?.classList.add("hidden"));
   navLogoutBtn.classList.remove("hidden");
 }
 
