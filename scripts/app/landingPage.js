@@ -1,3 +1,5 @@
+'use strict';
+
 const sweetRestaurants = [
   {
     id: 1,
@@ -82,6 +84,8 @@ const sweetRestaurants = [
 ];
 
 const restaurantsContainer = document.getElementById('restaurants-container');
+const searchInputEl = document.getElementById('search-input');
+const form = document.getElementById('form');
 
 const restaurantCard = (res) => `<div class="restaurant-card-grid">
 <div class="restaurant-img-container">
@@ -108,9 +112,29 @@ const restaurantCard = (res) => `<div class="restaurant-card-grid">
 const renderResCard = (arr) => {
   restaurantsContainer.innerHTML = '';
 
-  arr.forEach((item) => {
-    restaurantsContainer.innerHTML += restaurantCard(item);
-  });
+  if (arr.length >= 1) {
+    arr.forEach((item) => {
+      restaurantsContainer.innerHTML += restaurantCard(item);
+    });
+
+    return;
+  }
+
+  restaurantsContainer.innerHTML = `<h2>No Such Restaurants</h2>`;
 };
 
 renderResCard(sweetRestaurants);
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+});
+
+const searchRestaurants = (e) => {
+  const query = e.target.value.trim().toLowerCase();
+
+  const results = sweetRestaurants.filter((res) => res.name.toLowerCase().includes(query));
+
+  renderResCard(results);
+};
+
+searchInputEl.addEventListener('input', searchRestaurants);
