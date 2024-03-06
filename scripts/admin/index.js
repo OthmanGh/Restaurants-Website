@@ -83,3 +83,35 @@ function deleteUser(id) {
 
 // Restaurants section
 const restoForm = document.getElementById("resto_form");
+const [restoImage, restoName, restoDesc, restoLocation, restoRating] = [
+  document.querySelector('.resto_details input[name="image"]'),
+  document.querySelector('.resto_details input[name="name"]'),
+  document.querySelector('.resto_details textarea[name="description"]'),
+  document.querySelector('.resto_details input[name="location"]'),
+  document.querySelector('.resto_details input[name="rating"]'),
+];
+
+restoForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  createResto(
+    restoImage.value,
+    restoName.value,
+    restoDesc.value,
+    restoLocation.value,
+    restoRating.value
+  );
+});
+
+function createResto(image, name, desc, location, rating) {
+  const restos = JSON.parse(localStorage.restos ?? "[]");
+  const restoObject = {
+    id: (restos[restos.length - 1]?.id ?? 0) + 1,
+    image: image,
+    name: name,
+    desc: desc,
+    location: location,
+    rating: rating,
+    menu: [],
+  };
+  localStorage.restos = JSON.stringify([...restos, restoObject]);
+}

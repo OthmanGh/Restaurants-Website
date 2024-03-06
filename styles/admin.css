@@ -22,7 +22,7 @@ body {
   max-width: 300px;
   padding: 10px 20px;
   border: 2px solid #c2c2c2;
-  border-radius: 90px;
+  border-radius: 30px;
   outline: none;
   transition: border-color 0.2s ease;
 }
@@ -55,6 +55,22 @@ body {
   width: 100%;
   text-align: left;
 }
+
+.resto_form_container {
+  display: flex;
+  gap: 20px;
+}
+.resto_details, .resto_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 20px 40px;

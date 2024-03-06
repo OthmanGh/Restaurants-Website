@@ -81,42 +81,68 @@
         </div>
       </section>
 
-      <div class="margin-bottom flex j-s__between">
-        <h2>Restaurants</h2>
-        <button id="add_resto_btn" class="button">+ Add Restaurant</button>
-      </div>
-      <form action="" method="POST" id="resto_form" class="">
-        <h3>Restaurant Details</h3>
-        <input
-          type="text"
-          id="signup_name"
-          class="form-input"
-          placeholder="Name"
-        />
-        <input
-          type="email"
-          id="signup_email"
-          class="form-input"
-          placeholder="Email Address"
-        />
-        <input
-          type="text"
-          id="signup_password"
-          class="form-input"
-          placeholder="Password"
-        />
-        <h3>Menu</h3>
-        <button type="submit" class="button">Create account</button>
-      </form>
-      <div id="users_table">
-        <div class="user_row">
-          <p>ID</p>
-          <p>Name</p>
-          <p>Email</p>
-          <p>Password</p>
-          <p>Actions</p>
+      <!-- Restaurants section -->
+      <section class="resto-section">
+        <div class="margin-bottom flex j-s__between">
+          <h2>Restaurants</h2>
+          <button id="add_resto_btn" class="button">+ Add Restaurant</button>
         </div>
-      </div>
+        <form action="" method="POST" id="resto_form">
+          <div class="resto_form_container margin-bottom">
+            <div class="resto_details">
+              <h3>Restaurant Details</h3>
+              <input
+                type="url"
+                name="image"
+                class="form-input"
+                placeholder="Restaurant Image URL"
+              />
+              <input
+                type="text"
+                name="name"
+                class="form-input"
+                placeholder="Restaurant Name"
+              />
+              <textarea
+                name="description"
+                class="form-input"
+                cols="30"
+                rows="10"
+                placeholder="Restaurant Description"
+              ></textarea>
+              <input
+                type="text"
+                name="location"
+                class="form-input"
+                placeholder="Restaurant Location"
+              />
+              <span>Rating</span>
+              <div class="radio-group">
+                <input type="radio" name="rating" id="rating_1" value="1" checked />
+                <label for="rating_1">1</label>
+
+                <input type="radio" name="rating" id="rating_2" value="2" />
+                <label for="rating_2">2</label>
+
+                <input type="radio" name="rating" id="rating_3" value="3" />
+                <label for="rating_3">3</label>
+
+                <input type="radio" name="rating" id="rating_4" value="4" />
+                <label for="rating_4">4</label>
+
+                <input type="radio" name="rating" id="rating_5" value="5" />
+                <label for="rating_5">5</label>
+              </div>
+            </div>
+            <div class="resto_menu">
+              <h3>Menu</h3>
+              <div class="resto_menu_item"></div>
+            </div>
+          </div>
+
+          <button type="submit" class="button">Create restaurant</button>
+        </form>
+      </section>
     </main>
   </body>
 </html>
