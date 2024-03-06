@@ -12,6 +12,9 @@ body {
 .hidden {
   display: none !important;
 }
+section {
+  padding: 0;
+}
 .users-section {
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -32,7 +35,7 @@ body {
 }
 .button {
   cursor: pointer;
-  background-color: var(--clrs-primary-);
+  background-color: var(--clrs-secondary-);
   border: none;
   color: #fff;
   padding: 10px 30px;
@@ -40,11 +43,11 @@ body {
   transition: background-color 0.2s ease;
 }
 .button:hover {
-  background-color: var(--clrs-secondary-);
+  background-color: var(--clrs-primary-);
 }
 .delete-button {
   background-color: #fff;
-  color: var(--clrs-primary-);
+  color: var(--clrs-secondary-);
 }
 #signup_form {
   margin-bottom: 20px;
