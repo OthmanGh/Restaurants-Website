@@ -88,28 +88,33 @@ function populateRestosTable() {
 populateRestosTable();
 
 function addRestoRow(resto) {
-  const { id, image, name, desc, location, rating } = resto;
-  // Row
-  const restoRow = document.createElement("tr");
-  restoRow.id = `resto_${id}`;
-  restoRow.classList.add("resto_row");
-
-  // Button
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("button", "delete-button");
-  deleteBtn.innerHTML = "Delete";
-  deleteBtn.addEventListener("click", () => deleteResto(id));
-
-  restoRow.innerHTML += `<td>${id}</td>
-  <td><img src="${image}" width="200"></td>
-  <td>${name}</td>
-  <td>${desc}</td>
-  <td>${location}</td>
-  <td>${rating}/5</td>`;
-  const actionsCol = document.createElement("td");
-  actionsCol.append(deleteBtn);
-  restoRow.append(actionsCol);
-  restosTable.append(restoRow);
+  addRow(
+    "resto",
+    resto.id,
+    [
+      {
+        data: resto.id,
+      },
+      {
+        type: "image",
+        data: resto.image,
+      },
+      {
+        data: resto.name,
+      },
+      {
+        data: resto.desc,
+      },
+      {
+        data: resto.location,
+      },
+      {
+        data: `${resto.rating}/5`,
+      },
+    ],
+    restosTable,
+    deleteResto
+  );
 }
 
 function deleteResto(id) {

@@ -41,27 +41,29 @@ function createUser(name, email, password) {
 }
 
 function addUserRow(user) {
-  const { id, name, email, password, favorites } = user;
-  // Row
-  const userRow = document.createElement("tr");
-  userRow.id = `user_${id}`;
-  userRow.classList.add("user_row");
-
-  // Button
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("button", "delete-button");
-  deleteBtn.innerHTML = "Delete";
-  deleteBtn.addEventListener("click", () => deleteUser(id));
-
-  userRow.innerHTML += `<td>${id}</td>
-  <td>${name}</td>
-  <td>${email}</td>
-  <td>${password}</td>
-  <td>${favorites.length}</td>`;
-  const actionsCol = document.createElement("td");
-  actionsCol.append(deleteBtn);
-  userRow.append(actionsCol);
-  usersTableBody.append(userRow);
+  addRow(
+    "user",
+    user.id,
+    [
+      {
+        data: user.id,
+      },
+      {
+        data: user.name,
+      },
+      {
+        data: user.email,
+      },
+      {
+        data: user.password,
+      },
+      {
+        data: user.favorites.length,
+      },
+    ],
+    usersTableBody,
+    deleteUser
+  );
 }
 
 function populateUsersTable() {
