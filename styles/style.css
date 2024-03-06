@@ -111,16 +111,17 @@ body {
   --clrs-primary-: #c32422;
   --clrs-bg-: #ece2d2;
   --clrs-secondary-: #e19291;
-  --clrs-secondary-strong: #f68987;
+  --clrs-secondary-strong-: #f68987;
   --clrs-gray-: #838383;
-  --clrs-black: #222;
+  --clrs-black-: #222;
+  --clrs-whtie-somke-: whitesmoke;
 }
 
 /*----------------- Header Section -----------------*/
 
 .header {
-  background-color: var(--clrs-black);
-  color: white;
+  background-color: var(--clrs-black-);
+  color: var(--clrs-whtie-somke-);
   font-size: 2.4rem;
 }
 
@@ -152,7 +153,7 @@ body {
 
 .nav-link:hover,
 .nav-link:active {
-  color: #fff;
+  color: var(--clrs-whtie-somke-);
 }
 
 .menu-toggle {
@@ -202,7 +203,7 @@ input:focus {
   background-color: #ece2d2;
   border: none;
   width: 100%;
-  color: var(--clrs-secondary-strong);
+  color: var(--clrs-secondary-strong-);
   align-self: center;
 }
 
@@ -216,7 +217,7 @@ hr {
   margin-bottom: 30px;
   border: none;
   height: 2px;
-  background-color: var(--clrs-secondary-strong);
+  background-color: var(--clrs-secondary-strong-);
   max-width: 70%;
 }
 
@@ -229,7 +230,7 @@ hr {
 .restaurant-card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: #fff;
+  background-color: var(--clrs-whtie-somke-);
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -253,7 +254,7 @@ hr {
 }
 
 .restaurant-content {
-  color: var(--clrs-black);
+  color: var(--clrs-black-);
   padding: 15px;
 }
 
@@ -332,7 +333,7 @@ hr {
 
   .menu-toggle {
     position: absolute;
-    background-color: rgb(46, 46, 46);
+    background-color: var(--clrs-black-);
     inset: 0;
     display: flex;
     height: 100vh;
