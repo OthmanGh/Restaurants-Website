@@ -51,7 +51,7 @@ body {
 #signup_form .button {
   flex-shrink: 0;
 }
-#users_table {
+.table {
   width: 100%;
   text-align: left;
 }

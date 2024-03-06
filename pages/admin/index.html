@@ -65,7 +65,7 @@
           <button type="submit" class="button">Create account</button>
         </form>
         <div class="table_container">
-          <table id="users_table">
+          <table id="users_table" class="table">
             <thead>
               <tr>
                 <th>ID</th>
@@ -87,7 +87,12 @@
           <h2>Restaurants</h2>
           <button id="add_resto_btn" class="button">+ Add Restaurant</button>
         </div>
-        <form action="" method="POST" id="resto_form">
+        <form
+          action=""
+          method="POST"
+          id="resto_form"
+          class="margin-bottom hidden"
+        >
           <div class="resto_form_container margin-bottom">
             <div class="resto_details">
               <h3>Restaurant Details</h3>
@@ -118,7 +123,13 @@
               />
               <span>Rating</span>
               <div class="radio-group">
-                <input type="radio" name="rating" id="rating_1" value="1" checked />
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating_1"
+                  value="1"
+                  checked
+                />
                 <label for="rating_1">1</label>
 
                 <input type="radio" name="rating" id="rating_2" value="2" />
@@ -142,6 +153,22 @@
 
           <button type="submit" class="button">Create restaurant</button>
         </form>
+
+        <div class="table_container">
+          <table id="restos_table" class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </section>
     </main>
   </body>
