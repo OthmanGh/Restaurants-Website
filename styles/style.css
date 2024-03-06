@@ -8,7 +8,7 @@
 Default: 
 Medium: 
 Semi-bold:
-Bold:
+Bold: 700
 
 * Line heights
 Default: 
@@ -31,8 +31,8 @@ Letter spacing:
 
 * BORDER-RADIUS
 
-Default:
-Medium:
+Default: 
+Medium: 12px
 
 * WHITESPACE
 - Spacing system (px)
@@ -88,6 +88,8 @@ h6 {
 ul,
 li {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -105,10 +107,19 @@ body {
   position: relative;
 }
 
+:root {
+  --clrs-primary-: #c32422;
+  --clrs-bg-: #ece2d2;
+  --clrs-secondary-: #e19291;
+  --clrs-secondary-strong: #f68987;
+  --clrs-gray-: #838383;
+  --clrs-black: #222;
+}
+
 /*----------------- Header Section -----------------*/
 
 .header {
-  background-color: black;
+  background-color: var(--clrs-black);
   color: white;
   font-size: 2.4rem;
 }
@@ -131,12 +142,12 @@ body {
 }
 
 .logo-text span {
-  color: orangered;
+  color: var(--clrs-primary-);
 }
 
 .nav-link:link,
 .nav-link:visited {
-  color: rgba(255, 68, 0, 0.775);
+  color: var(--clrs-primary-);
 }
 
 .nav-link:hover,
@@ -148,9 +159,154 @@ body {
   display: none;
 }
 
+/*--------------- Landing Section ------
+  --------*/
+
+.landing-section {
+  padding: 50px 70px;
+  background-color: var(--clrs-bg-);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 70%;
+}
+
+.resturants-select {
+  padding: 10px;
+  font-size: 1.8rem;
+  background-color: var(--clrs-bg-);
+  color: var(--clrs-gray-);
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add border radius for a rounded look */
+  align-self: center;
+}
+
+.resturants-select:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.search-container {
+  max-width: 100%;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1.8rem;
+  background-color: #ece2d2;
+  border: none;
+  width: 100%;
+  color: var(--clrs-secondary-strong);
+  align-self: center;
+}
+
+/* Styling the search icon */
+.search-icon {
+  width: 25px;
+  margin-left: -35px;
+}
+
+hr {
+  margin-bottom: 30px;
+  border: none;
+  height: 2px;
+  background-color: var(--clrs-secondary-strong);
+  max-width: 70%;
+}
+
+.restaurants-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.restaurant-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.restaurant-card-grid img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.restaurant-card-grid:hover {
+  transform: scale(0.98);
+  cursor: pointer;
+  box-shadow: inset 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-content {
+  color: var(--clrs-black);
+  padding: 15px;
+}
+
+.restaurant-content ul + div {
+  font-size: 1.9rem;
+  color: var(--clrs-primary-);
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 0;
+  max-width: 40%;
+  gap: 5px;
+}
+
+.learn-more-btn:link,
+.learn-more-btn:visited {
+  color: #333;
+  padding: 15px 10px;
+  border-radius: 50px;
+  border: none;
+}
+
+.learn-more-btn:hover,
+.learn-more-btn:active {
+  color: var(--clrs-primary-);
+}
+
+.arrow-icon {
+  width: 20px;
+  display: inline;
+}
+
+.restaurant-content {
+  gap: 25px;
+}
+
+.restaurant button {
+  color: #c32422;
+}
+
 /*---------------Media Queries---------------*/
 
-@media (max-width: 1200px) {
+@media (max-width: 1750px) {
+  .restaurants-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1250px) {
+  .restaurants-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -194,7 +350,33 @@ body {
 
   /*--------------- hero section-s------
   --------*/
+
+  .restaurants-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
+  .search-icon {
+    display: none;
+  }
+
+  .resturants-select,
+  .search-input {
+    font-size: 1.6rem;
+    overflow: hidden;
+    max-width: 200px;
+  }
+
+  .restaurant-content {
+    gap: 5px;
+  }
+
+  .search-input {
+    width: 200px;
+  }
+
+  hr {
+    width: 100%;
+  }
 }
