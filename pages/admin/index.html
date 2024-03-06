@@ -7,56 +7,71 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../../styles/common/utilities.css" />
     <link rel="stylesheet" href="../../styles/style.css" />
-    <style>
-      .hidden {
-        display: none;
-      }
-      #users_table {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .user_row:nth-child(1) {
-        font-weight: bold;
-      }
-      .user_row {
-        display: flex;
-        gap: 20px;
-      }
-      .user_row div,
-      .user_row p {
-        width: 20%;
-      }
-    </style>
+    <link rel="stylesheet" href="../../styles/admin.css" />
     <!-- Scripts -->
     <script src="../../scripts/admin/index.js" defer></script>
   </head>
   <body>
-    <h2>Users</h2>
-    <button id="add_user_btn">+ Add User</button>
-    <form action="" method="POST" id="signup_form" class="hidden">
-      <div class="fieldset">
-        <label for="signup_name">Name</label>
-        <input type="text" id="signup_name" class="form-input" />
+    <header class="header">
+      <nav class="navbar flex j-s__around a-center">
+        <div class="logo-container">
+          <p class="logo-text">Foo<span>die.</span></p>
+        </div>
+
+        <div class="ham-menu-container">
+          <img id="ham-menu" src="./assets/icons/Hamburger-menu.svg" />
+        </div>
+
+        <ul class="nav-links flex j-s__between">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#restaurants">Restaurants</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="users_title flex j-s__between">
+        <h2>Users</h2>
+        <button id="add_user_btn" class="button">+ Add User</button>
       </div>
-      <div class="fieldset">
-        <label for="signup_email">Email address</label>
-        <input type="email" id="signup_email" class="form-input" />
+      <form action="" method="POST" id="signup_form" class="hidden">
+        <input
+          type="text"
+          id="signup_name"
+          class="form-input"
+          placeholder="Name"
+        />
+        <input
+          type="email"
+          id="signup_email"
+          class="form-input"
+          placeholder="Email Address"
+        />
+        <input
+          type="text"
+          id="signup_password"
+          class="form-input"
+          placeholder="Password"
+        />
+        <button type="submit" class="button">Create account</button>
+      </form>
+      <div id="users_table">
+        <div class="user_row">
+          <p>ID</p>
+          <p>Name</p>
+          <p>Email</p>
+          <p>Password</p>
+          <p>Actions</p>
+        </div>
       </div>
-      <div class="fieldset">
-        <label for="signup_password">Password</label>
-        <input type="password" id="signup_password" class="form-input" />
-      </div>
-      <button type="submit" class="button">Create account</button>
-    </form>
-    <div id="users_table">
-      <div class="user_row">
-        <p>ID</p>
-        <p>Name</p>
-        <p>Email</p>
-        <p>Password</p>
-        <p>Actions</p>
-      </div>
-    </div>
+    </main>
   </body>
 </html>

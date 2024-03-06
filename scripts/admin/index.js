@@ -47,6 +47,7 @@ function addRow(user) {
 
   // Button
   const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("button");
   deleteBtn.innerHTML = "Delete";
   deleteBtn.addEventListener("click", () => deleteUser(id));
 
