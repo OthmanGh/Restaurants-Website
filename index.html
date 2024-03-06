@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="./styles/style.css" />
 
     <!-- scripts-->
-    <script defer src="./scripts/app/navbar.js"></script>
-    <script defer src="./scripts/app/renderResturants.js"></script>
+    <!-- <script defer src="./scripts/app/navbar.js"></script>
+    <script defer src="./scripts/app/renderResturants.js"></script> -->
+
+    <script defer src="./scripts/app/landingPage.js"></script>
   </head>
   <body>
     <header class="header">
@@ -35,15 +37,20 @@
 
     <main>
       <section class="landing-section">
-        <div id="restaurants-container" class="flex a-center f-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          />
-          <p>ice cream</p>
-          <h2>Berry Blasts</h2>
+        <form id="form" class="form">
+          <select class="resturants-select f-bold">
+            <option>All</option>
+            <option>Recent</option>
+            <option>Popular</option>
+          </select>
 
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi sed cum sapiente harum esse fugit illum itaque doloribus neque velit!</p>
-        </div>
+          <label for="" class="flex a-center search-container">
+            <input class="search-input f-bold" type="text" placeholder="Search" />
+            <img class="search-icon" src="./assets/icons/search-svgrepo-com.svg" />
+          </label>
+        </form>
+        <hr />
+        <div id="restaurants-container" class="restaurants-container"></div>
       </section>
     </main>
     <footer></footer>
