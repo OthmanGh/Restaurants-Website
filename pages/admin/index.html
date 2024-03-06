@@ -146,7 +146,28 @@
             </div>
             <div class="resto_menu">
               <h3>Menu</h3>
-              <div class="resto_menu_item"></div>
+              <div id="resto_menu_items">
+                <div class="resto_menu_item flex j-s__between">
+                  <input
+                    type="text"
+                    placeholder="Menu Item Name"
+                    class="form-input menu-item-name"
+                  />
+                  <input
+                    type="number"
+                    step=".01"
+                    placeholder="Unit Price / $"
+                    class="form-input menu-item-price"
+                  />
+                </div>
+              </div>
+              <button
+                class="button delete-button"
+                type="button"
+                id="add_menu_item_btn"
+              >
+                + Add more
+              </button>
             </div>
           </div>
 

@@ -81,7 +81,14 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
+#resto_menu_items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.resto_menu_item {
+  gap: 20px;
+}
 @media (max-width: 768px) {
   .container {
     padding: 20px 40px;

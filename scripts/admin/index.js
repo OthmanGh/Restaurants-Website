@@ -85,6 +85,8 @@ function deleteUser(id) {
 const restoForm = document.getElementById("resto_form");
 const restosTable = document.querySelector("#restos_table tbody");
 const addRestoBtn = document.getElementById("add_resto_btn");
+const addMenuItems = document.getElementById("resto_menu_items");
+const addMenuItemsBtn = document.getElementById("add_menu_item_btn");
 const [restoImage, restoName, restoDesc, restoLocation] = [
   document.querySelector('.resto_details input[name="image"]'),
   document.querySelector('.resto_details input[name="name"]'),
@@ -106,8 +108,29 @@ restoForm.addEventListener("submit", (e) => {
   );
 });
 
+// Add menu items
+addMenuItemsBtn.addEventListener("click", () => {
+  addMenuItems.insertAdjacentHTML(
+    "beforeEnd",
+    `<div class="resto_menu_item flex j-s__between">
+  <input
+    type="text"
+    placeholder="Menu Item Name"
+    class="form-input menu-item-name"
+  />
+  <input
+    type="number"
+    step=".01"
+    placeholder="Unit Price / $"
+    class="form-input menu-item-price"
+  />
+</div>`
+  );
+});
+
 function createResto(image, name, desc, location, rating) {
   const restos = JSON.parse(localStorage.restos ?? "[]");
+  const items = getMenuItems();
   const restoObject = {
     id: (restos[restos.length - 1]?.id ?? 0) + 1,
     image: image,
@@ -115,10 +138,27 @@ function createResto(image, name, desc, location, rating) {
     desc: desc,
     location: location,
     rating: rating,
-    menu: [],
+    menu: items,
   };
   localStorage.restos = JSON.stringify([...restos, restoObject]);
   addRestoRow(restoObject);
+}
+
+function getMenuItems() {
+  const items = [];
+  const menuItemsInputs = document.querySelectorAll(".menu-item-name");
+  const menuItemsPricesInputs = document.querySelectorAll(".menu-item-price");
+  for (let i = 0; i < menuItemsInputs.length; i++) {
+    const name = menuItemsInputs[i].value;
+    const price = menuItemsPricesInputs[i].value;
+    if (name.trim() !== "") {
+      items.push({
+        name: name,
+        price: "$" + price,
+      });
+    }
+  }
+  return items;
 }
 
 function populateRestosTable() {
