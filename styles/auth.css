@@ -57,7 +57,7 @@
 }
 .form-button {
   cursor: pointer;
-  background-color: var(--clrs-primary-);
+  background-color: var(--clrs-secondary-);
   border: none;
   color: #fff;
   padding: 15px 30px;
@@ -65,7 +65,7 @@
   transition: background-color 0.2s ease;
 }
 .form-button:hover {
-  background-color: var(--clrs-secondary-);
+  background-color: var(--clrs-primary-);
 }
 .hidden {
   display: none;
