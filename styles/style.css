@@ -281,6 +281,8 @@ h6 {
   border: 1px solid var(--clrs-secondary-);
 }
 
+/*--------------- About Us Section --------------*/
+
 /*--------------- Landing Section ------
   --------*/
 .landing-section {
@@ -417,6 +419,24 @@ hr {
 
 .restaurant-content {
   margin-bottom: 2rem;
+}
+
+/*---------------Footer---------------*/
+
+.footer {
+  background-color: var(--clrs-black-light-);
+  color: var(--clrs-whtie-somke-);
+  font-size: 1.6rem;
+  border-top: 4px solid var(--clrs-secondary-strong);
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.scroll-to-top img {
+  width: 60px;
+  filter: invert();
+  rotate: -90deg;
 }
 
 /*---------------Media Queries---------------*/

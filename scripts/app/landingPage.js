@@ -3,18 +3,22 @@
 const sweetRestaurants = [
   {
     id: 1,
+    favorite: false,
     name: 'Cupcake Heaven',
     description: 'Indulge in our heavenly cupcakes that melt in your mouth!',
     location: 'New York',
     rate: 4.5,
+
     src: 'https://images.unsplash.com/photo-1518739745383-0ef26e9dd7fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3dlZXQlMjByZXN0YXVyYW50fGVufDB8fDB8fHww',
   },
   {
     id: 2,
+    favorite: false,
     name: 'Choco Delight',
     description: 'Experience the delight of our premium chocolate desserts.',
     location: 'Paris',
     rate: 4.8,
+
     src: 'https://images.unsplash.com/photo-1518184961573-4474fec952df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHN3ZWV0JTIwcmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D',
   },
   {
@@ -23,6 +27,7 @@ const sweetRestaurants = [
     description: 'Savor the sweetness of our berry-infused delicacies.',
     location: 'London',
     rate: 4.3,
+
     src: 'https://plus.unsplash.com/premium_photo-1661515657357-7dd8af1bdfab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fHN3ZWV0JTIwcmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D',
   },
   {
@@ -31,6 +36,7 @@ const sweetRestaurants = [
     description: 'Turn your dreams into reality with our creamy ice cream flavors!',
     location: 'Tokyo',
     rate: 4.6,
+
     src: 'https://images.unsplash.com/photo-1504465117220-78098ba506d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHN3ZWV0JTIwcmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D',
   },
   {
@@ -39,6 +45,7 @@ const sweetRestaurants = [
     description: 'Find serenity in every bite of our delightful pastries.',
     location: 'Los Angeles',
     rate: 4.7,
+
     src: 'https://images.unsplash.com/photo-1564495584622-0bb3af6f668e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTR8fHN3ZWV0JTIwcmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D',
   },
   {
@@ -47,6 +54,7 @@ const sweetRestaurants = [
     description: 'Welcome to the corner of delicious cookies and happiness!',
     location: 'Sydney',
     rate: 4.4,
+
     src: 'https://plus.unsplash.com/premium_photo-1664391858849-a7ea4b0eeaf2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxzd2VldCUyMHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D',
   },
   {
@@ -55,6 +63,7 @@ const sweetRestaurants = [
     description: 'Experience the joy of our freshly baked doughnuts!',
     location: 'Berlin',
     rate: 4.9,
+
     src: 'https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3dlZXR8ZW58MHx8MHx8fDA%3D',
   },
   {
@@ -63,6 +72,7 @@ const sweetRestaurants = [
     description: 'Step into our candy wonderland and taste the magic!',
     location: 'Rio de Janeiro',
     rate: 4.2,
+
     src: 'https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN3ZWV0fGVufDB8fDB8fHww',
   },
   {
@@ -79,12 +89,14 @@ const sweetRestaurants = [
     description: 'Embark on a fantasy journey through our exotic fruit desserts!',
     location: 'Bangkok',
     rate: 4.7,
+
     src: 'https://images.unsplash.com/photo-1534432182912-63863115e106?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHN3ZWV0fGVufDB8fDB8fHww',
   },
 ];
 
 const restaurantsContainer = document.getElementById('restaurants-container');
 const searchInputEl = document.getElementById('search-input');
+const selectEl = document.getElementById('selection-input');
 const form = document.getElementById('form');
 
 const restaurantCard = (res) => `<div class="restaurant-card-grid">
@@ -102,14 +114,12 @@ const restaurantCard = (res) => `<div class="restaurant-card-grid">
     <li>
     <p>Rate: <span>${res.rate}⭐</span></p>
     </li>
-
     <li>
     <a class="restaurent-card-btn" href="#">
     Learn More &#x2192;
   </a>
     </li>
   </ul>
-
 </div>
 </div>`;
 
@@ -135,10 +145,44 @@ form.addEventListener('submit', (e) => {
 
 const searchRestaurants = (e) => {
   const query = e.target.value.trim().toLowerCase();
-
   const results = sweetRestaurants.filter((res) => res.name.toLowerCase().includes(query));
-
   renderResCard(results);
 };
 
+const saveToLocalStorage = () => {
+  localStorage.setItem('sweetRestaurants', JSON.stringify(sweetRestaurants));
+};
+
+const loadFromLocalStorage = () => {
+  const storedData = localStorage.getItem('sweetRestaurants');
+  return storedData ? JSON.parse(storedData) : [];
+};
+
+const loadedSweetRestaurants = loadFromLocalStorage();
+
+if (loadedSweetRestaurants.length > 0) {
+  sweetRestaurants.push(...loadedSweetRestaurants);
+  renderResCard(sweetRestaurants);
+}
+
+const updateAndSaveRestaurants = (updatedRestaurants) => {
+  sweetRestaurants.length = 0;
+  sweetRestaurants.push(...updatedRestaurants);
+  saveToLocalStorage();
+};
+
 searchInputEl.addEventListener('input', searchRestaurants);
+
+selectEl.addEventListener('change', (e) => {
+  const filteredArr = [...sweetRestaurants];
+
+  if (e.target.value === 'lowest-rated') {
+    filteredArr.sort((a, b) => a.rate - b.rate);
+  } else if (e.target.value === 'highest-rated') {
+    filteredArr.sort((a, b) => b.rate - a.rate);
+  } else if (e.target.value === 'location') {
+    filteredArr.sort((a, b) => a.location.localeCompare(b.location));
+  }
+
+  renderResCard(filteredArr); // Render the filtered array
+});

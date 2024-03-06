@@ -70,10 +70,11 @@
         <div>
           <form id="form" class="form">
             <div class="search-container">
-              <select class="selection-input f-bold">
+              <select id="selection-input" class="selection-input f-bold">
                 <option>All</option>
-                <option>Recent</option>
-                <option>Popular</option>
+                <option value="location">Location</option>
+                <option value="highest-rated">Highest Rated</option>
+                <option value="lowest-rated">Lowest Rated</option>
               </select>
               <div class="flex a-center j-s__center">
                 <input id="search-input" class="search-input f-bold" type="text" placeholder="Search" />
@@ -86,27 +87,18 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+
+    <footer class="footer">
+      <p class="logo-text">Suc<span>RE.</span></p>
+      <p>&copy; 2024 - All Rights Reserved</p>
+      <a href="#" class="scroll-to-top">
+        <img src="./assets/icons/arrow-sm-right-svgrepo-com.svg" alt="" />
+      </a>
+          
+    </footer>
   </body>
 </html>
 
 <div class="restaurant-card-grid">
   <div class="restaurant-img-container"></div>
-
-  <!-- <div class="restaurant-content flex column">
-    <h3>${res.name}</h3>
-    <ul class="flex column">
-      <p>${res.description}</p>
-      <p>
-        location: <span>${res.location}</span>
-      </p>
-      <p>rate: ${res.rate}</p>
-    </ul>
-    <div>
-      <a class="learn-more-btn" href="#">
-        Learn More &#x2192;
-      </a>
-    </div>
-  </div>
-  </div> -->
 </div>

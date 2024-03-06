@@ -47,12 +47,3 @@ const renderRestaurants = (arr) => {
 };
 
 renderRestaurants(restaurantsArr);
-
-// Search Functionality
-// const searchRestaurants = () => {
-//   const query = input.value.toLowerCase().trim(); // Get the input value
-//   const results = restaurantsArr.filter((restaurant) => {
-//     return restaurant.name.toLowerCase().includes(query); // Filter restaurants by name
-//   });
-//   renderRestaurants(results); // Render filtered restaurants
-// };
