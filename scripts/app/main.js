@@ -16,4 +16,5 @@ navLogoutBtn?.addEventListener("click", () => {
   localStorage.removeItem("userId");
   navLogoutBtn.classList.add("hidden");
   [navLoginBtn, navSignupBtn].forEach((el) => el.classList.remove("hidden"));
+  location.reload();
 });
