@@ -95,17 +95,21 @@ const restaurantCard = (res) => `<div class="restaurant-card-grid">
 <div class="restaurant-content flex column">
   <h3>${res.name}</h3>
   <ul class="flex column">
-    <p>${res.description}</p>
-    <p>
-      location: <span>${res.location}</span>
-    </p>
-    <p>rate: ${res.rate}</p>
+    <li><p>Description: <span>${res.description}</span></p></li>
+    <li>
+      <p>Location: <span>${res.location}</span></p>
+    </li>
+    <li>
+    <p>Rate: <span>${res.rate}⭐</span></p>
+    </li>
+
+    <li>
+    <a class="restaurent-card-btn" href="#">
+    Learn More &#x2192;
+  </a>
+    </li>
   </ul>
-  <div>
-    <a class="learn-more-btn" href="#">
-      Learn More &#x2192;
-    </a>
-  </div>
+
 </div>
 </div>`;
 
@@ -120,7 +124,7 @@ const renderResCard = (arr) => {
     return;
   }
 
-  restaurantsContainer.innerHTML = `<h2>No Such Restaurants</h2>`;
+  restaurantsContainer.innerHTML = `<h2 style="color: #fff">No Such Restaurants</h2>`;
 };
 
 renderResCard(sweetRestaurants);
