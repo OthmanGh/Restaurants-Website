@@ -1,0 +1,72 @@
+:root {
+  --error-clr: #dc2626;
+}
+#auth_form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.form-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 20px 10px 50px;
+  border: 2px solid #c2c2c2;
+  border-radius: 90px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.form-input-error {
+  border-color: var(--error-clr);
+}
+.form-input:hover,
+.form-input:focus {
+  border-color: var(--clrs-primary-);
+}
+.form-input-icon {
+  position: relative;
+}
+.form-input-icon img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  translate: 0 -50%;
+}
+.auth_error {
+  margin-top: 20px;
+  color: var(--error-clr);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.auth_error::before {
+  display: block;
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-image: url("../assets/icons/error.svg");
+  background-size: cover;
+}
+.form-button {
+  cursor: pointer;
+  background-color: var(--clrs-primary-);
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 90px;
+  transition: background-color 0.2s ease;
+}
+.form-button:hover {
+  background-color: var(--clrs-secondary-);
+}
+.hidden {
+  display: none;
+}

@@ -7,56 +7,190 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../../styles/common/utilities.css" />
     <link rel="stylesheet" href="../../styles/style.css" />
-    <style>
-      .hidden {
-        display: none;
-      }
-      #users_table {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .user_row:nth-child(1) {
-        font-weight: bold;
-      }
-      .user_row {
-        display: flex;
-        gap: 20px;
-      }
-      .user_row div,
-      .user_row p {
-        width: 20%;
-      }
-    </style>
+    <link rel="stylesheet" href="../../styles/admin.css" />
     <!-- Scripts -->
-    <script src="../../scripts/admin/index.js" defer></script>
+    <script src="../../scripts/admin/users.js" defer></script>
+    <script src="../../scripts/admin/restaurants.js" defer></script>
   </head>
   <body>
-    <h2>Users</h2>
-    <button id="add_user_btn">+ Add User</button>
-    <form action="" method="POST" id="signup_form" class="hidden">
-      <div class="fieldset">
-        <label for="signup_name">Name</label>
-        <input type="text" id="signup_name" class="form-input" />
-      </div>
-      <div class="fieldset">
-        <label for="signup_email">Email address</label>
-        <input type="email" id="signup_email" class="form-input" />
-      </div>
-      <div class="fieldset">
-        <label for="signup_password">Password</label>
-        <input type="password" id="signup_password" class="form-input" />
-      </div>
-      <button type="submit" class="button">Create account</button>
-    </form>
-    <div id="users_table">
-      <div class="user_row">
-        <p>ID</p>
-        <p>Name</p>
-        <p>Email</p>
-        <p>Password</p>
-        <p>Actions</p>
-      </div>
-    </div>
+    <header class="header">
+      <nav class="navbar flex j-s__around a-center">
+        <div class="logo-container">
+          <p class="logo-text">Foo<span>die.</span></p>
+        </div>
+
+        <div class="ham-menu-container">
+          <img id="ham-menu" src="./assets/icons/Hamburger-menu.svg" />
+        </div>
+
+        <ul class="nav-links flex j-s__between">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#restaurants">Restaurants</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="users-section">
+        <div class="margin-bottom flex j-s__between">
+          <h2>Users</h2>
+          <button id="add_user_btn" class="button">+ Add User</button>
+        </div>
+        <form action="" method="POST" id="signup_form" class="hidden">
+          <input
+            type="text"
+            id="signup_name"
+            class="form-input"
+            placeholder="Name"
+          />
+          <input
+            type="email"
+            id="signup_email"
+            class="form-input"
+            placeholder="Email Address"
+          />
+          <input
+            type="text"
+            id="signup_password"
+            class="form-input"
+            placeholder="Password"
+          />
+          <button type="submit" class="button">Create account</button>
+        </form>
+        <div class="table_container">
+          <table id="users_table" class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Favorites</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Restaurants section -->
+      <section class="resto-section">
+        <div class="margin-bottom flex j-s__between">
+          <h2>Restaurants</h2>
+          <button id="add_resto_btn" class="button">+ Add Restaurant</button>
+        </div>
+        <form
+          action=""
+          method="POST"
+          id="resto_form"
+          class="margin-bottom hidden"
+        >
+          <div class="resto_form_container margin-bottom">
+            <div class="resto_details">
+              <h3>Restaurant Details</h3>
+              <input
+                type="url"
+                name="image"
+                class="form-input"
+                placeholder="Restaurant Image URL"
+              />
+              <input
+                type="text"
+                name="name"
+                class="form-input"
+                placeholder="Restaurant Name"
+              />
+              <textarea
+                name="description"
+                class="form-input"
+                cols="30"
+                rows="10"
+                placeholder="Restaurant Description"
+              ></textarea>
+              <input
+                type="text"
+                name="location"
+                class="form-input"
+                placeholder="Restaurant Location"
+              />
+              <span>Rating</span>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating_1"
+                  value="1"
+                  checked
+                />
+                <label for="rating_1">1</label>
+
+                <input type="radio" name="rating" id="rating_2" value="2" />
+                <label for="rating_2">2</label>
+
+                <input type="radio" name="rating" id="rating_3" value="3" />
+                <label for="rating_3">3</label>
+
+                <input type="radio" name="rating" id="rating_4" value="4" />
+                <label for="rating_4">4</label>
+
+                <input type="radio" name="rating" id="rating_5" value="5" />
+                <label for="rating_5">5</label>
+              </div>
+            </div>
+            <div class="resto_menu">
+              <h3>Menu</h3>
+              <div id="resto_menu_items">
+                <div class="resto_menu_item flex j-s__between">
+                  <input
+                    type="text"
+                    placeholder="Menu Item Name"
+                    class="form-input menu-item-name"
+                  />
+                  <input
+                    type="number"
+                    step=".01"
+                    placeholder="Unit Price / $"
+                    class="form-input menu-item-price"
+                  />
+                </div>
+              </div>
+              <button
+                class="button delete-button"
+                type="button"
+                id="add_menu_item_btn"
+              >
+                + Add more
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="button">Create restaurant</button>
+        </form>
+
+        <div class="table_container">
+          <table id="restos_table" class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
