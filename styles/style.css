@@ -355,6 +355,7 @@ hr {
   transition: all 0.3s ease-in-out;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
+  position: relative;
 }
 
 .restaurant-card-grid img {
