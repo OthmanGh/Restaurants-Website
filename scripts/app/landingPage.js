@@ -1,5 +1,12 @@
 'use strict';
 
+// Remove restaurants if user is not logged in
+if (!window.isLoggedIn) {
+  document.querySelector(
+    '.landing-section'
+  ).innerHTML = `<h3><a href="./pages/user/auth.html" style="color:var(--clrs-primary-);">Please login to view and favorite restaurants!</a></h3>`;
+}
+
 const sweetRestaurants = [
   {
     id: 1,
@@ -72,6 +79,7 @@ const sweetRestaurants = [
     description: 'Step into our candy wonderland and taste the magic!',
     location: 'Rio de Janeiro',
     rate: 4.2,
+
     src: 'https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN3ZWV0fGVufDB8fDB8fHww',
   },
   {
@@ -185,4 +193,17 @@ const updateAndSaveRestaurants = (updatedRestaurants) => {
 };
 
 searchInputEl.addEventListener('input', searchRestaurants);
-selectEl.addEventListener('change', filterRestauratns);
+
+selectEl.addEventListener('change', (e) => {
+  const filteredArr = [...sweetRestaurants];
+
+  if (e.target.value === 'lowest-rated') {
+    filteredArr.sort((a, b) => a.rate - b.rate);
+  } else if (e.target.value === 'highest-rated') {
+    filteredArr.sort((a, b) => b.rate - a.rate);
+  } else if (e.target.value === 'location') {
+    filteredArr.sort((a, b) => a.location.localeCompare(b.location));
+  }
+
+  renderResCard(filteredArr); // Render the filtered array
+});
