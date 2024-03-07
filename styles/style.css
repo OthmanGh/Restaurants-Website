@@ -109,26 +109,24 @@ h6 {
 }
 
 :root {
-  --clrs-primary-: #f68987;
+  --clrs-primary-: #cf3e3b;
   --clrs-bg-: #ece2d2;
-  --clrs-secondary-: #cf3e3b;
-  --clrs-secondary-strong: #cf3e3b;
-  --clrs-secondary-strong-: #cf3e3b;
+  --clrs-secondary-: #f68987;
+
   --clrs-gray-: #838383;
   --clrs-black-: #222;
-  --clrs-black-light-: hwb(0 13% 87%);
+  --clrs-black-light-: rgb(46, 46, 46);
   --clrs-whtie-somke-: whitesmoke;
 }
 
 /*----------------- Header Section -----------------*/
 
 .header {
-  background-color: rgb(34, 34, 34);
   color: white;
-  background-color: var(--clrs-black-light-);
+  background-color: var(--clrs-black-);
   color: var(--clrs-whtie-somke-);
   font-size: 2.4rem;
-  border-bottom: 4px solid var(--clrs-secondary-strong);
+  border-bottom: 4px solid var(--clrs-primary-);
 }
 
 .navbar {
@@ -176,7 +174,7 @@ h6 {
 
 .nav-link:hover,
 .nav-link:active {
-  color: var(--clrs-secondary-strong);
+  color: var(--clrs-secondary-);
 }
 
 .menu-toggle {
@@ -230,7 +228,7 @@ h6 {
 }
 
 .hero-grid h1 span {
-  color: var(--clrs-secondary-strong);
+  color: var(--clrs-primary-);
 }
 
 .hero-description {
@@ -250,23 +248,23 @@ h6 {
 
 .btn:link,
 .btn:visited {
-  padding: 15px 30px;
+  padding: 13px 30px;
   border-radius: 30px;
   font-weight: bold;
-  border: 1px solid var(--clrs-primary-);
+  border: 3px solid var(--clrs-primary-);
   font-size: 2rem;
 }
 
 .learn-more-btn:link,
 .learn-more-btn:visited {
   background-color: transparent;
-  color: var(--clrs-secondary-strong);
+  color: var(--clrs-primary-);
   border-color: transparent !important;
 }
 
 .learn-more-btn:hover,
 .learn-more-btn:active {
-  border: 1px solid var(--clrs-secondary-) !important;
+  border: 3px solid var(--clrs-primary-) !important;
 }
 
 .explore-btn:link,
@@ -278,7 +276,7 @@ h6 {
 .explore-btn:hover,
 .explore-btn:active {
   background-color: var(--clrs-secondary-);
-  border: 1px solid var(--clrs-secondary-);
+  border: 3px solid var(--clrs-secondary-);
 }
 
 /*--------------- About Us Section --------------*/
@@ -293,7 +291,8 @@ h6 {
 .landing-section h2 {
   text-align: center;
   font-size: 4.8rem;
-  color: var(--clrs-secondary-strong);
+  color: var(--clrs-primary-);
+  margin-bottom: 40px;
 }
 
 .landing-section h2 {
@@ -301,39 +300,46 @@ h6 {
 }
 
 .form {
-  max-width: 800px;
-  gap: 10px;
-  margin-bottom: 20px;
+  width: 100%;
 }
 
 .search-container {
+  max-width: 50%;
   display: flex;
+  gap: 10px;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
-.selection-input,
 .search-input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 10px;
-  background-color: var(--clrs-bg-);
+  padding: 13px 20px;
+  flex: 1.5;
 }
 
-.search-icon {
-  width: 50px;
-  height: 42px;
+.selection-input {
+  padding: 15px;
+  flex: 0.5;
+  color: var(--clrs-gray-);
+}
+
+.search-input,
+.selection-input {
   background-color: var(--clrs-bg-);
+  border-radius: 10px;
+}
+
+.search-input:focus,
+.selection-input:focus {
+  outline: none;
 }
 
 hr {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   border: none;
   height: 2px;
-  background-color: var(--clrs-secondary-strong);
-  background-color: var(--clrs-secondary-strong-);
-  max-width: 70%;
+  background-color: var(--clrs-primary-);
+  width: 50%;
 }
 
 .restaurants-container {
@@ -356,12 +362,14 @@ hr {
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
   position: relative;
+  gap: 30px;
 }
 
 .restaurant-card-grid img {
   height: 250px;
   width: 100%;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .restaurant-card-grid:hover {
@@ -372,17 +380,22 @@ hr {
 
 .restaurant-content {
   color: var(--clrs-black-light-);
-  padding: 15px;
+  padding: 10px 20px;
+}
+
+.restaurant-content h3 {
+  margin-bottom: 20px;
+  font-size: 2.4rem;
 }
 
 .restaurant-content p {
   text-align: start;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
 .restaurant-content p span {
-  color: var(--clrs-secondary-);
+  color: var(--clrs-primary-);
 }
 
 .restaurant-content ul + div {
@@ -404,7 +417,7 @@ hr {
   margin: 0;
   text-align: start;
   font-weight: bold;
-  padding: 13px 15px;
+  padding: 10px 13px;
   border-radius: 12px;
 }
 
@@ -414,7 +427,7 @@ hr {
 
 .restaurent-card-btn:hover,
 .restaurent-card-btn:active {
-  background-color: var(--clrs-black-);
+  background-color: var(--clrs-black-light-);
   color: var(--clrs-whtie-somke-);
 }
 
@@ -428,7 +441,7 @@ hr {
   background-color: var(--clrs-black-light-);
   color: var(--clrs-whtie-somke-);
   font-size: 1.6rem;
-  border-top: 4px solid var(--clrs-secondary-strong);
+  border-top: 4px solid var(--clrs-primary-);
   padding: 40px 0;
   display: flex;
   justify-content: space-around;
@@ -436,8 +449,10 @@ hr {
 }
 .scroll-to-top img {
   width: 60px;
-  filter: invert();
   rotate: -90deg;
+  background-color: var(--clrs-primary-);
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 /*---------------Media Queries---------------*/
@@ -464,9 +479,20 @@ hr {
     justify-content: space-between;
     padding: 13px 20px;
   }
+
   .header ul {
     display: none;
   }
+
+  .search-container {
+    text-align: center;
+    margin: 30px auto;
+  }
+
+  hr {
+    width: 100%;
+  }
+
   .ham-menu-container {
     display: block;
     width: 55px;
@@ -479,16 +505,17 @@ hr {
 
   .menu-toggle {
     position: absolute;
-    background-color: rgb(46, 46, 46);
-    background-color: var(--clrs-black-);
+    background-color: var(--clrs-black-light-);
     inset: 0;
     display: flex;
     height: 100vh;
   }
+
   .nav-toggle-link {
     display: flex;
     justify-content: center;
   }
+
   .nav-toggle-link {
     display: block;
     margin: 0 auto;
@@ -499,7 +526,6 @@ hr {
   }
 
   /* Hero Section*/
-
   .hero-grid {
     grid-template-columns: 1fr;
     align-items: center;
@@ -508,22 +534,15 @@ hr {
   }
 
   .hero-btns {
-    flex: column;
+    flex-direction: column;
     margin: 0 auto;
     gap: 10px;
   }
 
-  .hero-btns a {
-    display: block;
-  }
-
   .btn:link,
   .btn:visited {
-    padding: 15px 30px;
     border-radius: 10px;
     font-weight: bold;
-    border: 1px solid var(--clrs-primary-);
-    font-size: 2rem;
     margin-bottom: 30px;
   }
 }
@@ -551,10 +570,13 @@ hr {
   .restaurant-content {
     gap: 5px;
   }
-  .search-input {
-    width: 200px;
+
+  .restaurant-content h3 {
+    margin-bottom: 15px;
+    font-size: 2rem;
   }
-  hr {
-    width: 100%;
+
+  .restaurant-content p {
+    font-size: 1.6rem;
   }
 }

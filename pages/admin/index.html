@@ -30,9 +30,7 @@
             <a class="nav-link" href="../../index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html#restaurants"
-              >Restaurants</a
-            >
+            <a class="nav-link" href="../../index.html#restaurants">Restaurants</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../../index.html#about">About Us</a>
@@ -55,24 +53,9 @@
           <button id="add_user_btn" class="button">+ Add User</button>
         </div>
         <form action="" method="POST" id="signup_form" class="hidden">
-          <input
-            type="text"
-            id="signup_name"
-            class="form-input"
-            placeholder="Name"
-          />
-          <input
-            type="email"
-            id="signup_email"
-            class="form-input"
-            placeholder="Email Address"
-          />
-          <input
-            type="text"
-            id="signup_password"
-            class="form-input"
-            placeholder="Password"
-          />
+          <input type="text" id="signup_name" class="form-input" placeholder="Name" />
+          <input type="email" id="signup_email" class="form-input" placeholder="Email Address" />
+          <input type="text" id="signup_password" class="form-input" placeholder="Password" />
           <button type="submit" class="button">Create account</button>
         </form>
         <div class="table_container">
@@ -97,49 +80,17 @@
           <h2>Restaurants</h2>
           <button id="add_resto_btn" class="button">+ Add Restaurant</button>
         </div>
-        <form
-          action=""
-          method="POST"
-          id="resto_form"
-          class="margin-bottom hidden"
-        >
+        <form action="" method="POST" id="resto_form" class="margin-bottom hidden">
           <div class="resto_form_container margin-bottom">
             <div class="resto_details">
               <h3>Restaurant Details</h3>
-              <input
-                type="url"
-                name="image"
-                class="form-input"
-                placeholder="Restaurant Image URL"
-              />
-              <input
-                type="text"
-                name="name"
-                class="form-input"
-                placeholder="Restaurant Name"
-              />
-              <textarea
-                name="description"
-                class="form-input"
-                cols="30"
-                rows="10"
-                placeholder="Restaurant Description"
-              ></textarea>
-              <input
-                type="text"
-                name="location"
-                class="form-input"
-                placeholder="Restaurant Location"
-              />
+              <input type="url" name="image" class="form-input" placeholder="Restaurant Image URL" />
+              <input type="text" name="name" class="form-input" placeholder="Restaurant Name" />
+              <textarea name="description" class="form-input" cols="30" rows="10" placeholder="Restaurant Description"></textarea>
+              <input type="text" name="location" class="form-input" placeholder="Restaurant Location" />
               <span>Rating</span>
               <div class="radio-group">
-                <input
-                  type="radio"
-                  name="rating"
-                  id="rating_1"
-                  value="1"
-                  checked
-                />
+                <input type="radio" name="rating" id="rating_1" value="1" checked />
                 <label for="rating_1">1</label>
 
                 <input type="radio" name="rating" id="rating_2" value="2" />
@@ -159,26 +110,11 @@
               <h3>Menu</h3>
               <div id="resto_menu_items">
                 <div class="resto_menu_item flex j-s__between">
-                  <input
-                    type="text"
-                    placeholder="Menu Item Name"
-                    class="form-input menu-item-name"
-                  />
-                  <input
-                    type="number"
-                    step=".01"
-                    placeholder="Unit Price / $"
-                    class="form-input menu-item-price"
-                  />
+                  <input type="text" placeholder="Menu Item Name" class="form-input menu-item-name" />
+                  <input type="number" step=".01" placeholder="Unit Price / $" class="form-input menu-item-price" />
                 </div>
               </div>
-              <button
-                class="button delete-button"
-                type="button"
-                id="add_menu_item_btn"
-              >
-                + Add more
-              </button>
+              <button class="button delete-button" type="button" id="add_menu_item_btn">+ Add more</button>
             </div>
           </div>
 

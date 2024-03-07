@@ -16,7 +16,7 @@
     <script defer src="./scripts/app/landingPage.js"></script>
   </head>
   <body>
-    <header class="header">
+    <header id="header" class="header">
       <nav class="navbar flex j-s__around a-center">
         <div class="logo-container">
           <p class="logo-text">Suc<span>RE.</span></p>
@@ -29,7 +29,7 @@
         <ul class="nav-links flex j-s__between">
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
           <li class="nav-item">
-            <a class="nav-link" href="#restaurants">Restaurants</a>
+            <a id="restaurants-move" class="nav-link" href="#restaurants-container">Restaurants</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About Us</a>
@@ -83,10 +83,7 @@
                 <option value="highest-rated">Highest Rated</option>
                 <option value="lowest-rated">Lowest Rated</option>
               </select>
-              <div class="flex a-center j-s__center">
-                <input id="search-input" class="search-input f-bold" type="text" placeholder="Search" />
-                <img class="search-icon" src="./assets/icons/search-svgrepo-com.svg" />
-              </div>
+              <input id="search-input" class="search-input f-bold" type="text" placeholder="Search" />
             </div>
           </form>
           <hr />
@@ -98,7 +95,7 @@
     <footer class="footer">
       <p class="logo-text">Suc<span>RE.</span></p>
       <p>&copy; 2024 - All Rights Reserved</p>
-      <a href="#" class="scroll-to-top">
+      <a id="sroll-to-top" class="scroll-to-top">
         <img src="./assets/icons/arrow-sm-right-svgrepo-com.svg" alt="" />
       </a>
     </footer>

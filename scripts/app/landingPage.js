@@ -105,6 +105,8 @@ const restaurantsContainer = document.getElementById('restaurants-container');
 const searchInputEl = document.getElementById('search-input');
 const selectEl = document.getElementById('selection-input');
 const form = document.getElementById('form');
+const scrollTop = document.getElementById('sroll-to-top');
+const headerEl = document.getElementById('header');
 
 const restaurantCard = (res) => `<div class="restaurant-card-grid">
 <div class="restaurant-img-container">
@@ -206,4 +208,8 @@ selectEl.addEventListener('change', (e) => {
   }
 
   renderResCard(filteredArr); // Render the filtered array
+});
+
+scrollTop.addEventListener('click', function () {
+  headerEl.scrollIntoView({ behavior: 'smooth' });
 });
