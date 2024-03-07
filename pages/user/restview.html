@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="../../styles/restview.css" />
+    <title>BABEL</title>
+  </head>
+  <body onload="changeBg()">
+    <!-- First Page -->
+
+    <section class="PageOne">
+      <div class="nav">
+        <ul class="nav_items">
+          <li><a href="#about" class="nav_link">About</a></li>
+          <li><a href="menu.html" class="nav_link">Menu</a></li>
+        </ul>
+
+        <div class="logo">
+          <h2>BABEL BAY</h2>
+        </div>
+
+        <ul class="nav_items2">
+          <li><a href="location.html" class="Location">Location</a></li>
+          <li><a href="auth.html" class="nav_link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <p>Babel's</p>
+        <h3>Lebanease Specialities</h3>
+      </div>
+
+      <a href="#about">
+        <div class="down"></div>
+      </a>
+    </section>
+
+    <!-- Javascript Backround Changing -->
+    <script>
+      function changeBg() {
+        const images = [
+          'url("../../assets/images/Babel/backround/b1.jpeg")',
+          'url("../../assets/images/Babel/backround/b3.jpeg")',
+          'url("../../assets/images/Babel/backround/b4.jpeg")',
+          'url("../../assets/images/Babel/backround/b6.jpeg")',
+          'url("../../assets/images/Babel/backround/b4.jpeg")',
+        ];
+
+        const section = document.querySelector('section');
+        const bg = images[Math.floor(Math.random() * images.length)];
+        section.style.backgroundImage = bg;
+      }
+      setInterval(changeBg, 1500);
+    </script>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <h1 class="heading"><span>about</span> us</h1>
+      <div class="row">
+        <div class="image">
+          <img src="../../assets/images/Babel/about.jpeg" alt="" />
+        </div>
+        <div class="content">
+          <h3>what makes our restaurant special?</h3>
+          <p>
+            Located in the heart of zeitounay Bay Beirut, when brought to light in 2012 Babel Bay was destined to pay homage to Beirut, with a meticulous
+            interior replicating the capital's shoreline laying on top of 7 sandstones symbolizing the 7 destructions which Beirut has faced.
+          </p>
+          <p>Babel Bay is renowned for its cosmopolitan seafood dishes prepared with the outlet's progressive touch.</p>
+          <a href="https://www.babelrestaurant.com/branch/index/babel-bay" class="btn">learn more</a>
+        </div>
+      </div>
+    </section>
+    <a id="about"></a>
+    <br />
+    <br />
+
+    <!-- Footer -->
+    <section class="footer">
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+      </div>
+
+      <div class="links">
+        <a href="#">home</a>
+        <a href="#about">about</a>
+        <a href="menu.html">menu</a>
+        <a href="location.html">location</a>
+      </div>
+    </section>
+  </body>
+</html>

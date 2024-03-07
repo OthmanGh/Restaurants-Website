@@ -1,6 +1,11 @@
 :root {
   --error-clr: #dc2626;
 }
+
+body {
+  min-height: 100vh;
+}
+
 #auth_form {
   margin-top: 20px;
   display: flex;
@@ -49,10 +54,10 @@
 }
 .auth_error::before {
   display: block;
-  content: "";
+  content: '';
   width: 25px;
   height: 25px;
-  background-image: url("../assets/icons/error.svg");
+  background-image: url('../assets/icons/error.svg');
   background-size: cover;
 }
 .form-button {

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/menu.css" />
+    <link rel="stylesheet" href="../../styles/common/utilities.css" />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <title>Menu</title>
+  </head>
+  <body>
+    <header id="header" class="header">
+      <nav class="navbar flex j-s__around a-center">
+        <div class="logo-container">
+          <p class="logo-text">Suc<span>RE.</span></p>
+        </div>
+
+        <div class="ham-menu-container">
+          <img id="ham-menu" src="./assets/icons/Hamburger-menu.svg" />
+        </div>
+
+        <ul class="nav-links flex j-s__between">
+          <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+          <li class="nav-item">
+            <a id="restaurants-move" class="nav-link" href="../../index.html">Restaurants</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="nav-link-btns flex">
+          <a class="login-btn" href="./auth.html">Login</a>
+          <a class="signup-btn" href="./auth.html">Sign Up</a>
+          <a class="logout-btn hidden" href="#">Log out</a>
+        </div>
+      </nav>
+    </header>
+    <br />
+
+    <div class="menu-section" id="starters">
+      <h2>Starters</h2>
+      <div class="menu" id="starters-menu"></div>
+    </div>
+
+    <div class="menu-section" id="hot_dishes">
+      <h2>Hot Dishes</h2>
+      <div class="menu" id="hot_dishes-menu"></div>
+    </div>
+
+    <div class="menu-section" id="burgers">
+      <h2>Burgers</h2>
+      <div class="menu" id="burgers-menu"></div>
+    </div>
+
+    <div class="menu-section" id="desserts">
+      <h2>Desserts</h2>
+      <div class="menu" id="desserts-menu"></div>
+    </div>
+
+    <div class="menu-section" id="beverage">
+      <h2>Beverages</h2>
+      <div class="menu" id="beverage-menu"></div>
+    </div>
+
+    <script src="../../scripts/app/menu.js"></script>
+  </body>
+</html>

@@ -124,7 +124,7 @@ const restaurantCard = (res) => `<div class="restaurant-card-grid">
     <p>Rate: <span>${res.rate}⭐</span></p>
     </li>
     <li>
-    <a class="restaurent-card-btn" href="#">
+    <a href="../../pages/user/restview.html" class="restaurent-card-btn" href="#">
     Learn More &#x2192;
   </a>
     </li>

@@ -455,6 +455,14 @@ hr {
   cursor: pointer;
 }
 
+/*--------------- About us ---------------*/
+.about-us {
+  background-image: url(https://plus.unsplash.com/premium_photo-1695045520609-6b2ccdf97c88?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fHN3ZWV0fGVufDB8fDB8fHww);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+
 /*---------------Media Queries---------------*/
 @media (max-width: 1750px) {
   .restaurants-container {
@@ -558,6 +566,15 @@ hr {
 }
 
 @media (max-width: 480px) {
+  h1 {
+    font-size: 4rem !important;
+  }
+
+  .hero-section p {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
   .search-icon {
     display: none;
   }
