@@ -48,7 +48,9 @@ Medium: 12px
 * {
   margin: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 img {
   display: block;
   max-width: 100%;

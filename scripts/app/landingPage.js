@@ -1,20 +1,20 @@
-"use strict";
+'use strict';
 
 // Remove restaurants if user is not logged in
 if (!window.isLoggedIn) {
   document.querySelector(
-    ".landing-section"
+    '.landing-section'
   ).innerHTML = `<h3><a href="./pages/user/auth.html" style="color:var(--clrs-primary-);">Please login to view and favorite restaurants!</a></h3>`;
 }
 
-const sweetRestaurants = JSON.parse(localStorage.restos ?? "[]");
+const sweetRestaurants = JSON.parse(localStorage.restos ?? '[]');
 
-const restaurantsContainer = document.getElementById("restaurants-container");
-const searchInputEl = document.getElementById("search-input");
-const selectEl = document.getElementById("selection-input");
-const form = document.getElementById("form");
-const scrollTop = document.getElementById("sroll-to-top");
-const headerEl = document.getElementById("header");
+const restaurantsContainer = document.getElementById('restaurants-container');
+const searchInputEl = document.getElementById('search-input');
+const selectEl = document.getElementById('selection-input');
+const form = document.getElementById('form');
+const scrollTop = document.getElementById('sroll-to-top');
+const headerEl = document.getElementById('header');
 
 const restaurantCard = (res) => `<div class="restaurant-card-grid">
 <div class="restaurant-img-container">
@@ -41,7 +41,7 @@ const restaurantCard = (res) => `<div class="restaurant-card-grid">
 </div>`;
 
 const renderResCard = (arr) => {
-  restaurantsContainer.innerHTML = "";
+  restaurantsContainer.innerHTML = '';
 
   if (arr.length >= 1) {
     arr.forEach((item) => {
@@ -54,28 +54,28 @@ const renderResCard = (arr) => {
   restaurantsContainer.innerHTML = `<h2 style="color: #fff">No Such Restaurants</h2>`;
 };
 
-renderResCard(sweetRestaurants);
+if (window.isLoggedIn) {
+  renderResCard(sweetRestaurants);
+}
 
-form.addEventListener("submit", (e) => {
+form?.addEventListener('submit', (e) => {
   e.preventDefault();
 });
 
 const searchRestaurants = (e) => {
   const query = e.target.value.trim().toLowerCase();
-  const results = sweetRestaurants.filter((res) =>
-    res.name.toLowerCase().includes(query)
-  );
+  const results = sweetRestaurants.filter((res) => res.name.toLowerCase().includes(query));
   renderResCard(results);
 };
 
 const filterRestauratns = (e) => {
   const filteredArr = [...sweetRestaurants];
 
-  if (e.target.value === "lowest-rated") {
+  if (e.target.value === 'lowest-rated') {
     filteredArr.sort((a, b) => a.rating - b.rating);
-  } else if (e.target.value === "highest-rated") {
+  } else if (e.target.value === 'highest-rated') {
     filteredArr.sort((a, b) => b.rating - a.rating);
-  } else if (e.target.value === "location") {
+  } else if (e.target.value === 'location') {
     filteredArr.sort((a, b) => a.location.localeCompare(b.location));
   }
 
@@ -83,11 +83,11 @@ const filterRestauratns = (e) => {
 };
 
 const saveToLocalStorage = () => {
-  localStorage.setItem("sweetRestaurants", JSON.stringify(sweetRestaurants));
+  localStorage.setItem('sweetRestaurants', JSON.stringify(sweetRestaurants));
 };
 
 const loadFromLocalStorage = () => {
-  const storedData = localStorage.getItem("sweetRestaurants");
+  const storedData = localStorage.getItem('sweetRestaurants');
   return storedData ? JSON.parse(storedData) : [];
 };
 
@@ -104,22 +104,18 @@ const updateAndSaveRestaurants = (updatedRestaurants) => {
   saveToLocalStorage();
 };
 
-searchInputEl.addEventListener("input", searchRestaurants);
+searchInputEl?.addEventListener('input', searchRestaurants);
 
-selectEl.addEventListener("change", (e) => {
+selectEl?.addEventListener('change', (e) => {
   const filteredArr = [...sweetRestaurants];
 
-  if (e.target.value === "lowest-rated") {
+  if (e.target.value === 'lowest-rated') {
     filteredArr.sort((a, b) => a.rating - b.rating);
-  } else if (e.target.value === "highest-rated") {
+  } else if (e.target.value === 'highest-rated') {
     filteredArr.sort((a, b) => b.rating - a.rating);
-  } else if (e.target.value === "location") {
+  } else if (e.target.value === 'location') {
     filteredArr.sort((a, b) => a.location.localeCompare(b.location));
   }
 
   renderResCard(filteredArr); // Render the filtered array
-});
-
-scrollTop.addEventListener("click", function () {
-  headerEl.scrollIntoView({ behavior: "smooth" });
 });
